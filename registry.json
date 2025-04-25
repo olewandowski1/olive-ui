@@ -21,12 +21,26 @@
         {
           "path": "src/registry/new-york/blocks/landing/hero/centered-hero-block/components/max-width-wrapper.tsx",
           "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "hero"]
+    },
+    {
+      "name": "left-aligned-header",
+      "type": "registry:block",
+      "title": "Left Aligned Header",
+      "descritpion": "A left-aligned header with a caption, title and description.",
+      "files": [
+        {
+          "path": "src/registry/new-york/blocks/landing/header/left-aligned-header/page.tsx",
+          "type": "registry:block"
         },
         {
-          "path": "src/registry/new-york/blocks/landing/hero/centered-hero-block/components/heading.tsx",
+          "path": "src/registry/new-york/blocks/landing/header/left-aligned-header/components/max-width-wrapper.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["landing", "header"]
     }
   ]
 }

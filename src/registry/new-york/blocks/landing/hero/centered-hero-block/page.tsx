@@ -3,7 +3,6 @@ import { Check, LucideIcon, Rocket } from 'lucide-react';
 import { Badge } from '@/registry/new-york/ui/badge';
 import { Separator } from '@/registry/new-york/ui/separator';
 
-import { Heading } from './components/heading';
 import { MaxWidthWrapper } from './components/max-width-wrapper';
 import { ShinyButton } from './components/shiny-button';
 
@@ -51,13 +50,13 @@ export function CenteredHeroBlock({
             </span>
           </Badge>
 
-          <Heading>
+          <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl text-pretty text-foreground/90'>
             <span>{headingText}</span>
             <br />
             <span className='text-transparent bg-gradient-to-r from-primary/80 to-primary bg-clip-text'>
               {headingTextHighliged}
             </span>
-          </Heading>
+          </h1>
 
           <p className='mx-auto text-center text-base/7 max-w-prose text-pretty text-foreground/80'>
             {descriptionTextStart}{' '}

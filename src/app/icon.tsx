@@ -1,11 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 const Icon = () => {
-  let fill = 'olive';
-
-  if (process.env.NODE_ENV === 'development') {
-    fill = 'green';
-  }
+  let fill = 'black';
 
   return new ImageResponse(
     (

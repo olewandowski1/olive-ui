@@ -24,7 +24,7 @@ export function MainNav() {
               key={item.label}
               href={item.href}
               className={cn(
-                'transition-colors hover:text-foreground/80 flex items-center',
+                'transition-colors hover:text-foreground flex items-center',
                 pathname?.startsWith(item.href)
                   ? 'text-foreground'
                   : 'text-foreground/80'
