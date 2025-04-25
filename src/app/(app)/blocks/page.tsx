@@ -1,3 +1,3 @@
-export function BlocksPage() {
+export default function BlocksPage() {
   return <div></div>;
 }

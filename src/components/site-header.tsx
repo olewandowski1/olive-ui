@@ -10,7 +10,7 @@ import { Button } from '@/registry/new-york/ui/button';
 
 export function SiteHeader() {
   return (
-    <header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+    <header className='sticky top-0 z-50 w-full backdrop-blur-lg'>
       <MaxWidthWrapper className='flex items-center h-16 gap-2 md:gap-4'>
         <MainNav />
         <MobileNav />
