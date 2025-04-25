@@ -41,6 +41,23 @@
         }
       ],
       "categories": ["landing", "header"]
+    },
+    {
+      "name": "centered-header",
+      "type": "registry:block",
+      "title": "Centered Header",
+      "description": "A centered header with a caption, title and description.",
+      "files": [
+        {
+          "path": "src/registry/new-york/blocks/landing/header/centered-header/page.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/new-york/blocks/landing/header/centered-header/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "header"]
     }
   ]
 }
