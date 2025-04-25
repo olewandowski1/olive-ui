@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 const Icon = () => {
-  let fill = 'black';
+  const fill = 'black';
 
   return new ImageResponse(
     (
