@@ -21,7 +21,7 @@ type CenteredHeroBlockProps = {
 
 export function CenteredHeroBlock({
   badgeIcon: BadgeIcon = Rocket,
-  badgeText = 'Accelerate Your Landing Page Development with Olive UI',
+  badgeText = 'Accelerate Your Landing Page Development',
   headingText = 'Build Landing Pages Faster with Olive UI.',
   headingTextHighliged = 'Pre-built Components. Shadcn UI-based.',
   descriptionTextStart = 'Improve your landing page development speed',
