@@ -1,9 +1,9 @@
-import { MaxWidthWrapper } from '@/components/max-width-wrapper';
+import { CenteredHeroBlock } from '@/registry/new-york/blocks/landing/hero/centered-hero-block/page';
 
 export default function HomePage() {
   return (
-    <section>
-      <MaxWidthWrapper className='text-center'> Home Page </MaxWidthWrapper>
-    </section>
+    <>
+      <CenteredHeroBlock />
+    </>
   );
 }

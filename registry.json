@@ -2,5 +2,31 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "Olive UI",
   "homepage": "https://olive-ui.vercel.app",
-  "items": []
+  "items": [
+    {
+      "name": "centered-hero-block",
+      "type": "registry:block",
+      "title": "Centered Hero Block",
+      "description": "A centered hero block with a badge, title, description, features list, and a call to action button.",
+      "registryDependencies": ["button", "badge", "separator"],
+      "files": [
+        {
+          "path": "src/registry/new-york/blocks/landing/hero/centered-hero-block/page.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/registry/new-york/blocks/landing/hero/centered-hero-block/components/shiny-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/new-york/blocks/landing/hero/centered-hero-block/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/new-york/blocks/landing/hero/centered-hero-block/components/heading.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
 }
