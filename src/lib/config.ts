@@ -9,3 +9,29 @@ export const siteConfig = {
     github: 'https://olive-ui.vercel.app/',
   },
 };
+
+export type BlockCategoryType = {
+  slug: string;
+  name: string;
+  components: { name: string }[];
+  isNew?: boolean;
+};
+
+export const landingBlockCategories = [
+  {
+    slug: 'header',
+    name: 'Header',
+    components: [{ name: 'left-aligned-header' }],
+    isNew: true,
+  },
+  {
+    slug: 'hero',
+    name: 'Hero',
+    components: [{ name: 'centered-hero-block' }],
+    isNew: true,
+  },
+];
+
+export function getCategory(slug: string): BlockCategoryType | undefined {
+  return landingBlockCategories.find((category) => category.slug === slug);
+}
