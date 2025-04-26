@@ -4,11 +4,10 @@ import { Code, Component, Monitor, Smartphone, Tablet } from 'lucide-react';
 import { useState } from 'react';
 import { RegistryItem } from 'shadcn/registry';
 
+import { OpenInV0Button } from '@/components/open-in-v0-button';
 import { cn } from '@/registry/new-york/lib/utils';
-import { Tabs, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs';
-import { OpenInV0Button } from './open-in-v0-button';
 import { Button } from '@/registry/new-york/ui/button';
-import { Separator } from '@/registry/new-york/ui/separator';
+import { Tabs, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs';
 import {
   Tooltip,
   TooltipContent,
