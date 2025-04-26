@@ -1,18 +1,26 @@
 import { RegistryItem } from 'shadcn/registry';
 
-export async function BlockLoader({ component }: { component: RegistryItem }) {
-  if (!component?.name) {
+export async function BlockLoader({
+  name,
+}: {
+  name: Pick<RegistryItem, 'name'>['name'];
+}) {
+  if (name) {
     return null;
   }
 
-  const importPath = `@/registry/default/blocks/${component.name}/page`;
-
   try {
-    const Component = (await import(importPath)).default;
+    const Component = (
+      await import(
+        /* webpackInclude: /\/registry\/default\/blocks\/[^/]+\/page(\.tsx)?$/ */
+        /* webpackChunkName: "block-[request]" */
+        `@/registry/default/blocks/${name}/page`
+      )
+    ).default;
 
     return <Component />;
   } catch (error) {
-    console.error(`Failed to load component ${component.name}:`, error);
+    console.error(`Failed to load component ${name}:`, error);
     return null;
   }
 }

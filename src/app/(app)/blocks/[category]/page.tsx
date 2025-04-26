@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import CenteredHeader from '@/registry/default/blocks/centered-header/page';
 import { Separator } from '@/registry/default/ui/separator';
 
-import { BlockViewer } from '@/components/block-viewer';
+import { BlockLoader } from '@/components/block-loader';
+import { BlockViewerDock } from '@/components/block-viewer-dock';
 import { MaxWidthWrapper } from '@/components/max-width-wrapper';
 import { getCategory, landingBlockCategories } from '@/lib/config';
 import { getComponentsByNames } from '@/lib/utils';
@@ -43,7 +44,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
           <div className='flex flex-col gap-4 md:gap-8'>
             {categoryComponents.map((component) => (
-              <BlockViewer key={component.name} component={component} />
+              <BlockViewerDock key={component.name} component={component}>
+                <BlockLoader name={component.name} />
+              </BlockViewerDock>
             ))}
           </div>
         </div>
