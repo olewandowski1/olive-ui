@@ -4,7 +4,7 @@ import '@/app/globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { siteConfig } from '@/lib/config';
 import { fontMono, fontSans } from '@/lib/fonts';
-import { cn } from '@/registry/new-york/lib/utils';
+import { cn } from '@/registry/default/lib/utils';
 
 export const metadata: Metadata = {
   title: {

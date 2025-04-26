@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
 
-import { cn } from '@/registry/new-york/lib/utils';
+import { cn } from '@/registry/default/lib/utils';
 
 const glowVariants = cva('absolute w-full', {
   variants: {

@@ -1,5 +1,5 @@
-import { cn } from '@/registry/new-york/lib/utils';
-import { Button } from '@/registry/new-york/ui/button';
+import { cn } from '@/registry/default/lib/utils';
+import { Button } from '@/registry/default/ui/button';
 
 export function OpenInV0Button({
   name,

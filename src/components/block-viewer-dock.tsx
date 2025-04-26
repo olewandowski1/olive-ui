@@ -5,15 +5,15 @@ import { useState } from 'react';
 import { RegistryItem } from 'shadcn/registry';
 
 import { OpenInV0Button } from '@/components/open-in-v0-button';
-import { cn } from '@/registry/new-york/lib/utils';
-import { Button } from '@/registry/new-york/ui/button';
-import { Tabs, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs';
+import { cn } from '@/registry/default/lib/utils';
+import { Button } from '@/registry/default/ui/button';
+import { Tabs, TabsList, TabsTrigger } from '@/registry/default/ui/tabs';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/registry/new-york/ui/tooltip';
+} from '@/registry/default/ui/tooltip';
 
 type BlockViewerDockProps = {
   children: React.ReactNode;

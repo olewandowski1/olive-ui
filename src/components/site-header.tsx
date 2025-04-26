@@ -6,7 +6,7 @@ import { MaxWidthWrapper } from '@/components/max-width-wrapper';
 import { MobileNav } from '@/components/mobile-nav';
 import { ModeSwitcher } from '@/components/mode-switcher';
 import { siteConfig } from '@/lib/config';
-import { Button } from '@/registry/new-york/ui/button';
+import { Button } from '@/registry/default/ui/button';
 
 export function SiteHeader() {
   return (

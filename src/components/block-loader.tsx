@@ -1,22 +1,14 @@
 import { RegistryItem } from 'shadcn/registry';
 
 export async function BlockLoader({ component }: { component: RegistryItem }) {
-  if (!component?.name || !component?.categories) {
+  if (!component?.name) {
     return null;
   }
 
-  const mainCategory = component.categories[0];
-  const subCategory = component.categories[1];
-
-  const importPath = `@/registry/new-york/blocks/${mainCategory}/${subCategory}/${component.name}/page`;
+  const importPath = `@/registry/default/blocks/${component.name}/page`;
 
   try {
-    const Component = (
-      await import(
-        /* webpackInclude: /registry\/new-york\/blocks\/[^/]+\/[^/]+\/[^/]+\/page(\.tsx|\.js)?$/ */
-        importPath
-      )
-    ).default;
+    const Component = (await import(importPath)).default;
 
     return <Component />;
   } catch (error) {

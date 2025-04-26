@@ -7,14 +7,14 @@ import { useCallback, useState } from 'react';
 
 import { Icons } from '@/components/icons';
 import { NAV_ITEMS } from '@/lib/constants';
-import { cn } from '@/registry/new-york/lib/utils';
-import { Button } from '@/registry/new-york/ui/button';
+import { cn } from '@/registry/default/lib/utils';
+import { Button } from '@/registry/default/ui/button';
 import {
   Drawer,
   DrawerContent,
   DrawerTitle,
   DrawerTrigger,
-} from '@/registry/new-york/ui/drawer';
+} from '@/registry/default/ui/drawer';
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 
-import CenteredHeader from '@/registry/new-york/blocks/landing/header/centered-header/page';
-import { Separator } from '@/registry/new-york/ui/separator';
+import CenteredHeader from '@/registry/default/blocks/centered-header/page';
+import { Separator } from '@/registry/default/ui/separator';
 
 import { BlockViewer } from '@/components/block-viewer';
 import { MaxWidthWrapper } from '@/components/max-width-wrapper';

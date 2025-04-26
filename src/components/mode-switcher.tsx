@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useCallback } from 'react';
 
-import { Button } from '@/registry/new-york/ui/button';
+import { Button } from '@/registry/default/ui/button';
 
 export function ModeSwitcher() {
   const { setTheme, resolvedTheme } = useTheme();
