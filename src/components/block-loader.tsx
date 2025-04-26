@@ -5,7 +5,7 @@ export async function BlockLoader({
 }: {
   name: Pick<RegistryItem, 'name'>['name'];
 }) {
-  if (name) {
+  if (!name) {
     return null;
   }
 
