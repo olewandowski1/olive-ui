@@ -8,10 +8,15 @@ export async function BlockLoader({ component }: { component: RegistryItem }) {
   const mainCategory = component.categories[0];
   const subCategory = component.categories[1];
 
-  const importPath = `@/registry/new-york/blocks/${mainCategory}/${subCategory}/${component.name}/page.tsx`;
+  const importPath = `@/registry/new-york/blocks/${mainCategory}/${subCategory}/${component.name}/page`;
 
   try {
-    const Component = (await import(importPath)).default;
+    const Component = (
+      await import(
+        /* webpackInclude: /registry\/new-york\/blocks\/[^/]+\/[^/]+\/[^/]+\/page(\.tsx|\.js)?$/ */
+        importPath
+      )
+    ).default;
 
     return <Component />;
   } catch (error) {

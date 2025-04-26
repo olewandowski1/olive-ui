@@ -5,12 +5,18 @@ import { Separator } from '@/registry/new-york/ui/separator';
 
 import { BlockViewer } from '@/components/block-viewer';
 import { MaxWidthWrapper } from '@/components/max-width-wrapper';
-import { getCategory } from '@/lib/config';
+import { getCategory, landingBlockCategories } from '@/lib/config';
 import { getComponentsByNames } from '@/lib/utils';
 
 type CategoryPageProps = {
   params: Promise<{ category: string }>;
 };
+
+export async function generateStaticParams() {
+  return landingBlockCategories.map((category) => ({
+    category: category.slug,
+  }));
+}
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const currentCategory = getCategory((await params).category);
