@@ -1,5 +1,6 @@
-import registry from '~/registry.json';
 import type { RegistryItem } from 'shadcn/registry';
+
+import registry from '~/registry.json';
 
 const components = registry.items as unknown as RegistryItem[];
 

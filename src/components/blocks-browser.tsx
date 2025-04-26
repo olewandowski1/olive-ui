@@ -85,7 +85,7 @@ function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
         alt={alt}
         fill
         sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
-        className='object-contain p-4 md:p-6 bg-muted/30'
+        className='object-contain p-4 md:p-6 bg-gradient-to-b from-muted/20 via-muted/50 to-muted/80'
       />
     </>
   );

@@ -1,4 +1,4 @@
-import { LeftAlignedHeader } from '@/registry/new-york/blocks/landing/header/left-aligned-header/page';
+import LeftAlignedHeader from '@/registry/new-york/blocks/landing/header/left-aligned-header/page';
 
 import { BlocksBrowser } from '@/components/blocks-browser';
 

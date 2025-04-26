@@ -6,7 +6,7 @@ type CenteredHeaderProps = {
   description?: string;
 };
 
-export function CenteredHeader({
+export default function CenteredHeader({
   caption = 'Browse Blocks',
   title = 'The collection of UI blocks',
   description = 'Explore our collection of UI blocks, designed to help you build beautiful and functional user interfaces quickly and easily.',

@@ -18,7 +18,7 @@ type CenteredHeroBlockProps = {
   ctaButtonText?: string;
 };
 
-export function CenteredHeroBlock({
+export default function CenteredHeroBlock({
   badgeIcon: BadgeIcon = Rocket,
   badgeText = 'Accelerate Your Landing Page Development',
   headingText = 'Build Landing Pages Faster with Olive UI.',
@@ -29,7 +29,7 @@ export function CenteredHeroBlock({
   listItems = [
     'Pre-built, extendable blocks for a faster development process.',
     'Built on top of Shadcn UI for a modern design system.',
-    'Customizable, compliant with the WCAG 2.1 AA standard, easy to use.',
+    'Customizable, compliant with the WCAG 2.1 AA standard',
   ],
   ctaButtonText = 'Get Started Now',
 }: CenteredHeroBlockProps) {

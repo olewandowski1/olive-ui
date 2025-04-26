@@ -17,11 +17,13 @@ export type BlockCategoryType = {
   isNew?: boolean;
 };
 
+// Define the block categories and their components
+// This is a simplified version of the original code, focusing on the landing page blocks
 export const landingBlockCategories = [
   {
     slug: 'header',
     name: 'Header',
-    components: [{ name: 'left-aligned-header' }],
+    components: [{ name: 'left-aligned-header' }, { name: 'centered-header' }],
     isNew: true,
   },
   {
@@ -32,6 +34,8 @@ export const landingBlockCategories = [
   },
 ];
 
+// Function to get a category by its slug
+// This function is used to retrieve the category details based on the slug provided in the URL.
 export function getCategory(slug: string): BlockCategoryType | undefined {
   return landingBlockCategories.find((category) => category.slug === slug);
 }

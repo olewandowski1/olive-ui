@@ -9,10 +9,8 @@ export function OpenInV0Button({
     <Button
       aria-label='Open in v0'
       size='sm'
-      className={cn(
-        'shadow-none bg-black text-white hover:bg-black hover:text-white dark:bg-white dark:text-black',
-        className
-      )}
+      variant='ghost'
+      className={cn('size-8', className)}
       asChild
     >
       <a
@@ -20,7 +18,6 @@ export function OpenInV0Button({
         target='_blank'
         rel='noreferrer'
       >
-        Open in{' '}
         <svg
           viewBox='0 0 40 20'
           fill='none'

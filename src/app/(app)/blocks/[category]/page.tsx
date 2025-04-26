@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 
-import { CenteredHeader } from '@/registry/new-york/blocks/landing/header/centered-header/page';
+import CenteredHeader from '@/registry/new-york/blocks/landing/header/centered-header/page';
 import { Separator } from '@/registry/new-york/ui/separator';
 
+import { BlockViewer } from '@/components/block-viewer';
 import { MaxWidthWrapper } from '@/components/max-width-wrapper';
 import { getCategory } from '@/lib/config';
 import { getComponentsByNames } from '@/lib/utils';
@@ -25,7 +26,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <div className='space-y-4 animate-appear'>
+        <div className='space-y-8 animate-appear'>
           <CenteredHeader
             caption={`${currentCategory.name} Blocks`}
             title={`${currentCategory.name} Examples`}
@@ -34,12 +35,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
           <Separator />
 
-          <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-            {categoryComponents.map((component) => {
-              console.log(component);
-
-              return <div key={component.name}> {component.name} </div>;
-            })}
+          <div className='flex flex-col gap-4 md:gap-8'>
+            {categoryComponents.map((component) => (
+              <BlockViewer key={component.name} component={component} />
+            ))}
           </div>
         </div>
       </MaxWidthWrapper>
