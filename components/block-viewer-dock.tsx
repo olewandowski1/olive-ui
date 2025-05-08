@@ -4,9 +4,19 @@ import { Code, Component, Monitor, Smartphone, Tablet } from 'lucide-react';
 import { useState } from 'react';
 import { RegistryItem } from 'shadcn/registry';
 
-import { OpenInV0Button } from '@/components/open-in-v0-button';
+import { useIsMobile } from '@/registry/default/hooks/use-mobile';
 import { cn } from '@/registry/default/lib/utils';
 import { Button } from '@/registry/default/ui/button';
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/registry/default/ui/drawer';
 import { Tabs, TabsList, TabsTrigger } from '@/registry/default/ui/tabs';
 import {
   Tooltip,
@@ -15,12 +25,18 @@ import {
   TooltipTrigger,
 } from '@/registry/default/ui/tooltip';
 
+import { BlockCLI } from '@/components/component-cli';
+import { OpenInV0Button } from '@/components/open-in-v0-button';
+import { Icons } from './icons';
+import { siteConfig } from '@/lib/config';
+
 type BlockViewerDockProps = {
   children: React.ReactNode;
   component: RegistryItem;
 };
 
 export function BlockViewerDock({ children, component }: BlockViewerDockProps) {
+  const isMobile = useIsMobile();
   const [viewportSize, setViewportSize] = useState<
     'mobile' | 'tablet' | 'desktop'
   >('desktop');
@@ -77,21 +93,46 @@ export function BlockViewerDock({ children, component }: BlockViewerDockProps) {
                 </TooltipTrigger>
                 <TooltipContent> Open in v0 </TooltipContent>
               </Tooltip>
-              {/* TODO: Implement a modal with a source code */}
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant='ghost'
-                    size='sm'
-                    className='flex items-center justify-center size-8'
-                    aria-label='View the source code'
-                    disabled
-                  >
-                    <Code aria-hidden='true' />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent> Source Code - Coming Soon </TooltipContent>
-              </Tooltip>
+              <Drawer direction={isMobile ? 'bottom' : 'right'}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span>
+                      <DrawerTrigger asChild>
+                        <Button
+                          variant='ghost'
+                          size='sm'
+                          className='flex items-center justify-center size-8'
+                          aria-label='Get the block with Shadcn CLI'
+                        >
+                          <Code aria-hidden='true' />
+                        </Button>
+                      </DrawerTrigger>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent> Get with Shadcn CLI </TooltipContent>
+                </Tooltip>
+
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerTitle> Installation </DrawerTitle>
+                    <DrawerDescription>
+                      Copy the command below to install this block using the
+                      Shadcn CLI.
+                    </DrawerDescription>
+                  </DrawerHeader>
+
+                  <div className='min-w-0 p-4'>
+                    <BlockCLI name={component.name} />
+                  </div>
+
+                  <DrawerFooter className='flex flex-row items-center justify-center p-4'>
+                    <Icons.logo className='size-6' />
+                    <span className='inline-block font-bold'>
+                      {siteConfig.name}
+                    </span>
+                  </DrawerFooter>
+                </DrawerContent>
+              </Drawer>
             </TooltipProvider>
           </div>
         </div>
