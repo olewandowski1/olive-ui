@@ -9,7 +9,6 @@ import { cn } from '@/registry/default/lib/utils';
 import { Button } from '@/registry/default/ui/button';
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerFooter,
@@ -27,8 +26,8 @@ import {
 
 import { BlockCLI } from '@/components/component-cli';
 import { OpenInV0Button } from '@/components/open-in-v0-button';
-import { Icons } from './icons';
 import { siteConfig } from '@/lib/config';
+import { Icons } from './icons';
 
 type BlockViewerDockProps = {
   children: React.ReactNode;
