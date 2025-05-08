@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import CenteredHeader from '@/registry/default/blocks/centered-header/page';
+import CenteredHeader from '@/registry/default/blocks/centered-header/components/centered-header';
 import { Separator } from '@/registry/default/ui/separator';
 
 import { BlockLoader } from '@/components/block-loader';

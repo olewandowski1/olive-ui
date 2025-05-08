@@ -8,11 +8,16 @@
       "type": "registry:block",
       "title": "Centered Hero Block",
       "description": "A centered hero block with a badge, title, description, features list, and a call to action button.",
-      "registryDependencies": ["button", "badge", "separator"],
+      "registryDependencies": ["badge", "separator"],
       "files": [
         {
           "path": "registry/default/blocks/centered-hero-block/page.tsx",
-          "type": "registry:block"
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-hero-block/components/centered-hero-block.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/default/blocks/centered-hero-block/components/shiny-button.tsx",
@@ -33,7 +38,12 @@
       "files": [
         {
           "path": "registry/default/blocks/left-aligned-header/page.tsx",
-          "type": "registry:block"
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/left-aligned-header/components/left-aligned-header.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/default/blocks/left-aligned-header/components/max-width-wrapper.tsx",
@@ -50,7 +60,12 @@
       "files": [
         {
           "path": "registry/default/blocks/centered-header/page.tsx",
-          "type": "registry:block"
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-header/components/centered-header.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/default/blocks/centered-header/components/max-width-wrapper.tsx",
