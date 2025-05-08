@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "registry/default/blocks/centered-hero-block/page.tsx",
-      "content": "import CenteredHeroBlock from './components/centered-hero-block';\r\n\r\nexport default function Page() {\r\n  return <CenteredHeroBlock />;\r\n}\r\n",
+      "content": "import CenteredHeroBlock from '@/registry/default/blocks/centered-hero-block/components/centered-hero-block';\r\n\r\nexport default function Page() {\r\n  return <CenteredHeroBlock />;\r\n}\r\n",
       "type": "registry:page",
       "target": "app/blocks/page.tsx"
     },

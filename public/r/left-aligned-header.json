@@ -6,7 +6,7 @@
   "files": [
     {
       "path": "registry/default/blocks/left-aligned-header/page.tsx",
-      "content": "import LeftAlignedHeader from './components/left-aligned-header';\r\n\r\nexport default function Page() {\r\n  return <LeftAlignedHeader />;\r\n}\r\n",
+      "content": "import LeftAlignedHeader from '@/registry/default/blocks/left-aligned-header/components/left-aligned-header';\r\n\r\nexport default function Page() {\r\n  return <LeftAlignedHeader />;\r\n}\r\n",
       "type": "registry:page",
       "target": "app/blocks/page.tsx"
     },

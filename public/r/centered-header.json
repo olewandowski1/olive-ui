@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/default/blocks/centered-header/page.tsx",
-      "content": "import CenteredHeader from './components/centered-header';\r\n\r\nexport default function Page() {\r\n  return <CenteredHeader />;\r\n}\r\n",
+      "content": "import CenteredHeader from '@/registry/default/blocks/centered-header/components/centered-header';\r\n\r\nexport default function Page() {\r\n  return <CenteredHeader />;\r\n}\r\n",
       "type": "registry:page",
       "target": "app/blocks/page.tsx"
     },
