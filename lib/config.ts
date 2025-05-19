@@ -24,12 +24,22 @@ export const landingBlockCategories = [
     slug: 'header',
     name: 'Header',
     components: [{ name: 'left-aligned-header' }, { name: 'centered-header' }],
-    isNew: true,
+    isNew: false,
   },
   {
     slug: 'hero',
     name: 'Hero',
     components: [{ name: 'centered-hero-block' }],
+    isNew: false,
+  },
+  {
+    slug: 'footer',
+    name: 'Footer',
+    components: [
+      { name: 'centered-footer' },
+      { name: 'left-aligned-footer' },
+      { name: 'left-aligned-footer-with-socials' },
+    ],
     isNew: true,
   },
 ];

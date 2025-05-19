@@ -43,9 +43,9 @@ export function BlockViewerDock({ children, component }: BlockViewerDockProps) {
   const getViewportWidth = () => {
     switch (viewportSize) {
       case 'mobile':
-        return 'w-full sm:w-[375px]';
+        return 'w-full max-w-[375px] mx-auto';
       case 'tablet':
-        return 'w-full md:w-[768px]';
+        return 'w-full max-w-[768px] mx-auto';
       case 'desktop':
       default:
         return 'w-full';
@@ -139,7 +139,7 @@ export function BlockViewerDock({ children, component }: BlockViewerDockProps) {
 
       <div
         className={cn(
-          'border rounded-lg transition-all duration-300 overflow-hidden p-4 md:p-8 bg-gradient-to-b from-muted/20 via-muted/50 to-muted/80 mx-auto min-h-[324px]',
+          'border rounded-lg transition-all duration-300 overflow-hidden p-4 md:p-8 bg-gradient-to-b from-muted/20 via-muted/50 to-muted/80 mx-auto min-h-[324px] flex flex-col items-center justify-center',
           getViewportWidth()
         )}
       >

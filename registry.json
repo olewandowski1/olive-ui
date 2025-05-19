@@ -73,6 +73,72 @@
         }
       ],
       "categories": ["landing", "header"]
+    },
+    {
+      "name": "centered-footer",
+      "type": "registry:block",
+      "title": "Centered Footer",
+      "description": "A centered footer with links, a logo, and policy links.",
+      "files": [
+        {
+          "path": "registry/default/blocks/centered-footer/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-footer/components/centered-footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-footer/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "footer"]
+    },
+    {
+      "name": "left-aligned-footer",
+      "type": "registry:block",
+      "title": "Left Aligned Footer",
+      "description": "A left aligned footer with links, a logo, and policy links.",
+      "files": [
+        {
+          "path": "registry/default/blocks/left-aligned-footer/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/left-aligned-footer/components/left-aligned-footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/left-aligned-footer/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "footer"]
+    },
+    {
+      "name": "left-aligned-footer-with-socials",
+      "type": "registry:block",
+      "title": "Left Aligned Footer With Socials",
+      "description": "A left aligned footer with links, a logo, policy links, and social media links.",
+      "files": [
+        {
+          "path": "registry/default/blocks/left-aligned-footer-with-socials/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/left-aligned-footer-with-socials/components/left-aligned-footer-with-socials.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/left-aligned-footer-with-socials/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "footer"]
     }
   ]
 }
