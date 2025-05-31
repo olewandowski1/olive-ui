@@ -88,10 +88,10 @@ export default function LeftAlignedFooterWithSocials({
     <MaxWidthWrapper>
       <footer role='contentinfo' aria-label='Site Footer' className='py-8'>
         <div className='flex flex-col space-y-8'>
-          <div className='flex flex-col w-full gap-6 sm:items-start md:flex-row md:justify-between'>
+          <div className='flex flex-col items-center gap-8 md:flex-row md:justify-between md:items-start'>
             <Link
               href='#'
-              className='flex items-center self-start gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground'
+              className='flex items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2'
               aria-label={`${companyName} Home Page`}
             >
               <LogoIcon className='size-6' aria-hidden='true' />
@@ -99,7 +99,7 @@ export default function LeftAlignedFooterWithSocials({
             </Link>
 
             <nav
-              className='flex flex-wrap gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2'
+              className='flex flex-col items-center gap-4 md:flex-row md:gap-x-6 md:gap-y-2'
               aria-label='Footer Navigation'
             >
               {navLinks?.map((link) => {
@@ -108,7 +108,7 @@ export default function LeftAlignedFooterWithSocials({
                   <Link
                     href={link.href}
                     key={link.label}
-                    className='px-2 py-1 text-sm font-normal transition-colors rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground'
+                    className='px-2 py-1 text-sm font-normal transition-colors rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2'
                     aria-current={isCurrentPage ? 'page' : undefined}
                   >
                     {link.label}
@@ -117,54 +117,56 @@ export default function LeftAlignedFooterWithSocials({
               })}
             </nav>
 
-            <div
-              className='flex items-center gap-4'
-              role='navigation'
-              aria-label='Social Links'
+            <nav
+              className='flex items-center justify-center gap-4 md:justify-start'
+              aria-label='Social Media Links'
             >
-              {socialLinks.map((link, index) => {
+              {socialLinks.map((link) => {
                 const Icon = link.icon;
 
                 return (
                   <Link
-                    key={index}
+                    key={link.label}
                     href={link.href}
-                    className='p-2 transition-colors rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground'
-                    aria-label={`Link to ${link.label}`}
+                    className='p-2 transition-colors rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2'
+                    aria-label={`Visit our ${link.label} page`}
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={
+                      link.href.startsWith('http')
+                        ? 'noopener noreferrer'
+                        : undefined
+                    }
                   >
                     <Icon className='size-5' aria-hidden='true' />
                   </Link>
                 );
               })}
-            </div>
+            </nav>
           </div>
 
-          <Separator className='w-full' decorative aria-hidden='true' />
+          <Separator className='w-full' role='separator' aria-hidden='true' />
 
-          <div className='flex flex-col w-full gap-4 sm:items-start md:flex-row md:justify-between'>
-            <div className='text-sm text-muted-foreground'>
-              <span
-                aria-label={`Copyright ${currentYear}. All Rights Reserved.`}
-              >
-                © {currentYear} All Rights Reserved.
+          <div className='flex flex-col-reverse items-center gap-8 md:flex-row md:justify-between md:items-start'>
+            <div className='text-sm text-center text-muted-foreground md:text-left'>
+              <span>
+                © {currentYear} {companyName}. All Rights Reserved.
               </span>
             </div>
 
-            <div
-              className='flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6'
-              role='navigation'
-              aria-label='Legal Links'
+            <nav
+              className='flex flex-col items-center gap-4 md:flex-row md:gap-x-6'
+              aria-label='Legal and Policy Links'
             >
-              {policyLinks.map((link, index) => (
+              {policyLinks.map((link) => (
                 <Link
-                  key={index}
+                  key={link.label}
                   href={link.href}
-                  className='px-2 py-1 text-sm transition-colors rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground'
+                  className='px-2 py-1 text-sm transition-colors rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2'
                 >
                   {link.label}
                 </Link>
               ))}
-            </div>
+            </nav>
           </div>
         </div>
       </footer>
