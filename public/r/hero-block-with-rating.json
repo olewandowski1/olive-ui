@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-block-with-rating",
+  "type": "registry:block",
+  "title": "Hero Block With Rating",
+  "description": "A centered hero block with a badge, title, description, a call to action button and a rating section.",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/hero-block-with-rating/page.tsx",
+      "content": "import HeroBlockWithRating from '@/registry/default/blocks/hero-block-with-rating/components/hero-block-with-rating';\r\n\r\nexport default function Page() {\r\n  return <HeroBlockWithRating />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/blocks/page.tsx"
+    },
+    {
+      "path": "registry/default/blocks/hero-block-with-rating/components/hero-block-with-rating.tsx",
+      "content": "import { LucideIcon, Star } from 'lucide-react';\r\n\r\nimport {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from '@/registry/default/ui/avatar';\r\nimport { Badge } from '@/registry/default/ui/badge';\r\nimport { Separator } from '@/registry/default/ui/separator';\r\n\r\nimport { MaxWidthWrapper } from './max-width-wrapper';\r\nimport { ShinyButton } from './shiny-button';\r\n\r\ntype CenteredHeroBlockProps = {\r\n  badgeIcon?: LucideIcon;\r\n  badgeText?: string;\r\n  headingText?: string;\r\n  headingTextHighliged?: string;\r\n  descriptionTextStart?: string;\r\n  descriptionTextHighlighted?: string;\r\n  ctaButtonText?: string;\r\n  ratingSummary?: string;\r\n  availableAvatars?: { imageSrc: string; name: string }[];\r\n};\r\n\r\nexport default function HeroBlockWithRating({\r\n  badgeIcon: BadgeIcon = Star,\r\n  badgeText = 'Best Rated Service',\r\n  headingText = 'Example Headling Text',\r\n  headingTextHighliged = 'Example Highlighted Text',\r\n  descriptionTextStart = 'Much longer example text that is used to describe the block and its features. If you want to highlight a part of the text, you can use the highlighted text below.',\r\n  descriptionTextHighlighted = 'Example highlighted text',\r\n  ctaButtonText = 'Read More',\r\n  ratingSummary = 'Loved By The 500+ CEOs Worldwide',\r\n  availableAvatars = [\r\n    {\r\n      imageSrc: 'https://github.com/shadcn.png',\r\n      name: 'Example Avatar',\r\n    },\r\n    {\r\n      imageSrc: 'https://github.com/shadcn.png',\r\n      name: 'Example Avatar 2',\r\n    },\r\n    {\r\n      imageSrc: 'https://github.com/shadcn.png',\r\n      name: 'Example Avatar 3',\r\n    },\r\n  ],\r\n}: CenteredHeroBlockProps) {\r\n  return (\r\n    <section>\r\n      <MaxWidthWrapper>\r\n        <div className='flex flex-col items-center gap-8 mx-auto text-center'>\r\n          <Badge\r\n            variant='outline'\r\n            className='flex items-center justify-center space-x-1.5 h-7 text-foreground/90'\r\n          >\r\n            <span>\r\n              <BadgeIcon className='size-4' aria-hidden='true' />\r\n            </span>\r\n            <Separator orientation='vertical' />\r\n            <span className='text-xs font-normal text-foreground/90 line-clamp-1'>\r\n              {badgeText}\r\n            </span>\r\n          </Badge>\r\n\r\n          <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl text-pretty text-foreground/90'>\r\n            <span>{headingText}</span>\r\n            <br />\r\n            <span className='text-transparent bg-gradient-to-r from-primary/80 to-primary bg-clip-text'>\r\n              {headingTextHighliged}\r\n            </span>\r\n          </h1>\r\n\r\n          <p className='mx-auto text-center text-base/7 max-w-prose text-pretty text-foreground/80'>\r\n            {descriptionTextStart}{' '}\r\n            <span className='font-semibold text-transparent bg-gradient-to-r from-primary/80 to-primary bg-clip-text'>\r\n              {descriptionTextHighlighted}.\r\n            </span>\r\n          </p>\r\n\r\n          <div className='w-full max-w-80'>\r\n            <ShinyButton\r\n              href='/blocks'\r\n              className='relative z-10 w-full h-12 text-base transition-shadow duration-300 shadow-lg hover:shadow-xl'\r\n            >\r\n              {ctaButtonText}\r\n            </ShinyButton>\r\n          </div>\r\n\r\n          <div className='flex flex-col items-center gap-2'>\r\n            <div className='flex flex-row items-center gap-4'>\r\n              <div className='flex items-center -space-x-2'>\r\n                {availableAvatars.map(({ imageSrc, name }) => (\r\n                  <Avatar key={name} className='border-2 border-white'>\r\n                    <AvatarImage src={imageSrc} />\r\n                    <AvatarFallback>{name}</AvatarFallback>\r\n                  </Avatar>\r\n                ))}\r\n              </div>\r\n\r\n              <div className='flex items-center gap-1'>\r\n                {[...Array(5)].map((_, index) => (\r\n                  <Star size={16} key={index} color='#ffe234' fill='#ffe234' />\r\n                ))}\r\n              </div>\r\n            </div>\r\n\r\n            <span className='text-sm text-muted-foreground'>\r\n              {ratingSummary}\r\n            </span>\r\n          </div>\r\n        </div>\r\n      </MaxWidthWrapper>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/hero-block-with-rating/components/max-width-wrapper.tsx",
+      "content": "import { cn } from '@/registry/default/lib/utils';\r\n\r\ntype MaxWidthWrapperProps = {\r\n  className?: string;\r\n  children: React.ReactNode;\r\n};\r\n\r\nexport function MaxWidthWrapper({ className, children }: MaxWidthWrapperProps) {\r\n  return (\r\n    <div\r\n      className={cn('h-full mx-auto w-full max-w-screen-xl px-2', className)}\r\n    >\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/centered-hero-block/components/shiny-button.tsx",
+      "content": "import { ChevronRight } from 'lucide-react';\r\nimport Link from 'next/link';\r\n\r\nimport { cn } from '@/registry/default/lib/utils';\r\n\r\ntype ShinyButtonProps = {} & React.AnchorHTMLAttributes<HTMLAnchorElement>;\r\n\r\nexport function ShinyButton({\r\n  children,\r\n  className,\r\n  href,\r\n  ...props\r\n}: ShinyButtonProps) {\r\n  return (\r\n    <Link\r\n      href={href ?? '#'}\r\n      className={cn(\r\n        'group relative flex transform items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-md border border-white bg-primary/90 px-8 text-base/7 font-medium text-white transition-all duration-300 hover:ring-2 hover:ring-primary/90 hover:ring-offset-2 focus:outline-none focus:ring-2 focus:ring-offset-2',\r\n        className\r\n      )}\r\n      {...props}\r\n    >\r\n      <span className='relative z-10 flex items-center gap-2'>\r\n        {children}\r\n        <ChevronRight\r\n          className='-me-1 ms-1 size-4 shrink-0 opacity-60 text-white transition-transform duration-300 ease-in-out group-hover:translate-x-[2px]'\r\n          strokeWidth={2}\r\n        />\r\n      </span>\r\n\r\n      <div className='ease-[cubic-bezier(0.19,1,0.22,1)] absolute -left-[75px] -top-[50px] -z-10 h-[155px] w-12 rotate-[35deg] bg-white opacity-20 transition-all duration-500 group-hover:left-[120%]' />\r\n    </Link>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "landing",
+    "hero"
+  ]
+}

@@ -87,6 +87,89 @@
       "categories": ["landing", "hero"]
     },
     {
+      "name": "hero-block-with-image-3",
+      "type": "registry:block",
+      "title": "Hero Block With Image Variant 3",
+      "description": "A right aligned hero block with a badge, title, description, 2 buttons (primary, secondary), and an image on the left.",
+      "registryDependencies": ["badge", "separator", "button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/hero-block-with-image-3/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-3/components/hero-block-with-image-3.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-3/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "public/assets/hero-image.svg",
+          "type": "registry:file",
+          "target": "public/assets/hero-image.svg"
+        }
+      ],
+      "categories": ["landing", "hero"]
+    },
+    {
+      "name": "hero-block-with-image-4",
+      "type": "registry:block",
+      "title": "Hero Block With Image Variant 4",
+      "description": "A right aligned hero block with a badge, title, description, features, 2 buttons (primary, secondary), and an image on the left.",
+      "registryDependencies": ["badge", "separator", "button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/hero-block-with-image-4/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-4/components/hero-block-with-image-4.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-4/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "public/assets/hero-image.svg",
+          "type": "registry:file",
+          "target": "public/assets/hero-image.svg"
+        }
+      ],
+      "categories": ["landing", "hero"]
+    },
+    {
+      "name": "hero-block-with-rating",
+      "type": "registry:block",
+      "title": "Hero Block With Rating",
+      "description": "A centered hero block with a badge, title, description, a call to action button and a rating section.",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/default/blocks/hero-block-with-rating/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-rating/components/hero-block-with-rating.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-rating/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-hero-block/components/shiny-button.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "hero"]
+    },
+    {
       "name": "left-aligned-header",
       "type": "registry:block",
       "title": "Left Aligned Header",
