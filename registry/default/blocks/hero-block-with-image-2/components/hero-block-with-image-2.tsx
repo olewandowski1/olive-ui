@@ -41,7 +41,7 @@ export default function HeroSectionWithImage2({
   ],
   primaryButtonText = 'Get Started',
   secondaryButtonText = 'Learn More',
-  imageUrl = '/hero-image.svg',
+  imageUrl = '/assets/hero-image.svg',
   imageAlt = 'Hero Section Image',
   primaryHref = '#',
   secondaryHref = '#',
