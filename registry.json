@@ -51,7 +51,7 @@
           "type": "registry:component"
         },
         {
-          "path": "public/hero-image.svg",
+          "path": "public/assets/hero-image.svg",
           "type": "registry:file",
           "target": "public/assets/hero-image.svg"
         }
@@ -79,7 +79,7 @@
           "type": "registry:component"
         },
         {
-          "path": "public/hero-image.svg",
+          "path": "public/assets/hero-image.svg",
           "type": "registry:file",
           "target": "public/assets/hero-image.svg"
         }
