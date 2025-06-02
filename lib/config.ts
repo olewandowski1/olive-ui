@@ -29,7 +29,11 @@ export const landingBlockCategories = [
   {
     slug: 'hero',
     name: 'Hero',
-    components: [{ name: 'centered-hero-block' }],
+    components: [
+      { name: 'centered-hero-block' },
+      { name: 'hero-block-with-image-1' },
+      { name: 'hero-block-with-image-2' },
+    ],
     isNew: false,
   },
   {

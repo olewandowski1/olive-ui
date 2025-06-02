@@ -31,6 +31,62 @@
       "categories": ["landing", "hero"]
     },
     {
+      "name": "hero-block-with-image-1",
+      "type": "registry:block",
+      "title": "Hero Block With Image Variant 1",
+      "description": "A left aligned hero block with a badge, title, description, 2 buttons (primary, secondary), and an image on the right.",
+      "registryDependencies": ["badge", "separator", "button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/hero-block-with-image-1/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-1/components/hero-block-with-image-1.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-1/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "public/hero-image.svg",
+          "type": "registry:file",
+          "target": "public/assets/hero-image.svg"
+        }
+      ],
+      "categories": ["landing", "hero"]
+    },
+    {
+      "name": "hero-block-with-image-2",
+      "type": "registry:block",
+      "title": "Hero Block With Image Variant 2",
+      "description": "A left aligned hero block with a badge, title, description, features, 2 buttons (primary, secondary), and an image on the right.",
+      "registryDependencies": ["badge", "separator", "button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/hero-block-with-image-2/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-2/components/hero-block-with-image-2.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/hero-block-with-image-2/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "public/hero-image.svg",
+          "type": "registry:file",
+          "target": "public/assets/hero-image.svg"
+        }
+      ],
+      "categories": ["landing", "hero"]
+    },
+    {
       "name": "left-aligned-header",
       "type": "registry:block",
       "title": "Left Aligned Header",
