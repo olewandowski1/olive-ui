@@ -278,6 +278,29 @@
         }
       ],
       "categories": ["landing", "footer"]
+    },
+    {
+      "name": "centered-faq",
+      "type": "registry:block",
+      "title": "Centered FAQ Section",
+      "description": "A centered FAQ section with a title, description, a list of questions and answers, and a call to action.",
+      "registryDependencies": ["card", "accordion", "button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/centered-faq/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-faq/components/centered-faq.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-faq/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "faq"]
     }
   ]
 }

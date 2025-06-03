@@ -49,6 +49,12 @@ export const landingBlockCategories = [
     ],
     isNew: true,
   },
+  {
+    slug: 'faq',
+    name: 'FAQ Section',
+    components: [{ name: 'centered-faq' }],
+    isNew: true,
+  },
 ];
 
 // Function to get a category by its slug
