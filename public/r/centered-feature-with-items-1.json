@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "centered-feature-with-items-1",
+  "type": "registry:block",
+  "title": "Centered Feature With Items Variant 1",
+  "description": "A centered feature section with a badge, title, description, and a list of items (4) with icons and descriptions.",
+  "files": [
+    {
+      "path": "registry/default/blocks/centered-feature-with-items-1/page.tsx",
+      "content": "import CenteredFeatureWithItems1 from '@/registry/default/blocks/centered-feature-with-items-1/components/centered-feature-with-items-1';\r\n\r\nexport default function Page() {\r\n  return <CenteredFeatureWithItems1 />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/blocks/page.tsx"
+    },
+    {
+      "path": "registry/default/blocks/centered-feature-with-items-1/components/centered-feature-with-items-1.tsx",
+      "content": "import {\r\n  Calendar,\r\n  LucideIcon,\r\n  PersonStandingIcon,\r\n  Rocket,\r\n  Shield,\r\n} from 'lucide-react';\r\n\r\nimport { MaxWidthWrapper } from './max-width-wrapper';\r\n\r\ntype CenteredFeatureWithItems1Props = {\r\n  badgeText?: string;\r\n  headingText?: string;\r\n  sectionDescription?: string;\r\n  features?: {\r\n    id: number;\r\n    title: string;\r\n    description: string;\r\n    icon: LucideIcon;\r\n  }[];\r\n};\r\n\r\nexport default function CenteredFeatureWithItems1({\r\n  badgeText = 'Why Choose Us?',\r\n  headingText = 'Discover Unique Features That Power Your Experience',\r\n  sectionDescription = 'Explore the exceptional features that set us apart and enhance your journey with us. Each feature is designed to provide you with unparalleled value and convenience. Experience the difference with our innovative solutions that cater to your needs and elevate your expectations.',\r\n  features = [\r\n    {\r\n      id: 1,\r\n      title: 'Lightning Fast Performance',\r\n      description:\r\n        'Experience unparalleled speed and efficiency with our cutting-edge technology.',\r\n      icon: Rocket,\r\n    },\r\n    {\r\n      id: 2,\r\n      title: 'User-Friendly Interface',\r\n      description:\r\n        'Navigate effortlessly with our intuitive design that prioritizes user experience.',\r\n      icon: PersonStandingIcon,\r\n    },\r\n    {\r\n      id: 3,\r\n      title: '24/7 Customer Support',\r\n      description:\r\n        'Get assistance anytime with our dedicated support team ready to help you.',\r\n      icon: Calendar,\r\n    },\r\n    {\r\n      id: 4,\r\n      title: 'Secure and Reliable',\r\n      description:\r\n        'Trust in our robust security measures that keep your data safe and secure.',\r\n      icon: Shield,\r\n    },\r\n  ],\r\n}: CenteredFeatureWithItems1Props) {\r\n  return (\r\n    <section aria-labelledby='feature-heading'>\r\n      <MaxWidthWrapper>\r\n        <div className='flex flex-col items-center gap-6 mx-auto text-center sm:gap-8'>\r\n          <span className='text-sm font-medium text-primary'>{badgeText}</span>\r\n\r\n          <h2\r\n            id='feature-heading'\r\n            className='max-w-screen-md text-3xl font-bold tracking-tighter text-pretty sm:text-4xl md:text-5xl'\r\n          >\r\n            {headingText}\r\n          </h2>\r\n\r\n          <p className='max-w-screen-md mx-auto text-center text-base/7 text-pretty text-foreground/80'>\r\n            {sectionDescription}\r\n          </p>\r\n\r\n          <div\r\n            className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'\r\n            role='region'\r\n            aria-labelledby='features-list-heading'\r\n          >\r\n            <h3 id='features-list-heading' className='sr-only'>\r\n              List of key features and benefits\r\n            </h3>\r\n\r\n            {features.map(({ id, title, icon: Icon, description }) => (\r\n              <article\r\n                key={id}\r\n                className='flex flex-col items-center gap-2'\r\n                aria-labelledby={`feature-title-${id}`}\r\n                aria-describedby={`feature-description-${id}`}\r\n              >\r\n                <div\r\n                  className='p-2 border rounded-md border-primary bg-primary/5'\r\n                  role='img'\r\n                  aria-label={`${title} Feature Icon`}\r\n                >\r\n                  <Icon className='size-6 text-primary/90' aria-hidden='true' />\r\n                </div>\r\n\r\n                <h4\r\n                  id={`feature-title-${id}`}\r\n                  className='font-bold text-foreground/90'\r\n                >\r\n                  {title}\r\n                </h4>\r\n\r\n                <p\r\n                  id={`feature-description-${id}`}\r\n                  className='text-sm font-normal text-foreground/80'\r\n                >\r\n                  {description}\r\n                </p>\r\n              </article>\r\n            ))}\r\n          </div>\r\n        </div>\r\n      </MaxWidthWrapper>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/centered-feature-with-items-1/components/max-width-wrapper.tsx",
+      "content": "import { cn } from '@/registry/default/lib/utils';\r\n\r\ntype MaxWidthWrapperProps = {\r\n  className?: string;\r\n  children: React.ReactNode;\r\n};\r\n\r\nexport function MaxWidthWrapper({ className, children }: MaxWidthWrapperProps) {\r\n  return (\r\n    <div\r\n      className={cn('h-full mx-auto w-full max-w-screen-xl px-2', className)}\r\n    >\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "landing",
+    "feature"
+  ]
+}

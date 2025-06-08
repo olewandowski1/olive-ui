@@ -324,6 +324,143 @@
         }
       ],
       "categories": ["landing", "faq"]
+    },
+    {
+      "name": "centered-feature-with-items-1",
+      "type": "registry:block",
+      "title": "Centered Feature With Items Variant 1",
+      "description": "A centered feature section with a badge, title, description, and a list of items (4) with icons and descriptions.",
+      "files": [
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-1/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-1/components/centered-feature-with-items-1.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-1/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "feature"]
+    },
+    {
+      "name": "centered-feature-with-items-2",
+      "type": "registry:block",
+      "title": "Centered Feature With Items Variant 2",
+      "description": "A centered feature section with a badge, title, description, and a list of items (3) with icons and descriptions.",
+      "files": [
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-2/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-2/components/centered-feature-with-items-2.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-2/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "feature"]
+    },
+    {
+      "name": "centered-feature-with-items-3",
+      "type": "registry:block",
+      "title": "Centered Feature With Items Variant 3",
+      "description": "A centered feature section with a badge, title, and a list of items (6) with icons and descriptions.",
+      "files": [
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-3/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-3/components/centered-feature-with-items-3.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-3/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "feature"]
+    },
+    {
+      "name": "centered-feature-with-items-4",
+      "type": "registry:block",
+      "title": "Centered Feature With Items Variant 4",
+      "description": "A centered feature section with a badge, title, and a list of items (6) with small icons and descriptions.",
+      "files": [
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-4/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-4/components/centered-feature-with-items-4.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-4/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "feature"]
+    },
+    {
+      "name": "centered-feature-with-items-5",
+      "type": "registry:block",
+      "title": "Centered Feature With Items Variant 5",
+      "description": "A centered feature section with a badge, title, and a list of items (3) with images and descriptions.",
+      "files": [
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-5/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-5/components/centered-feature-with-items-5.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/centered-feature-with-items-5/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "feature"]
+    },
+    {
+      "name": "left-aligned-feature-with-image-1",
+      "type": "registry:block",
+      "title": "Left Aligned Feature With Image Variant 1",
+      "description": "A left aligned feature section with a badge, title, description, a testimonial, and an image on the right.",
+      "files": [
+        {
+          "path": "registry/default/blocks/left-aligned-feature-with-image-1/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/left-aligned-feature-with-image-1/components/left-aligned-feature-with-image-1.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/left-aligned-feature-with-image-1/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "public/assets/feature-image.svg",
+          "type": "registry:file",
+          "target": "public/assets/feature-image.svg"
+        }
+      ],
+      "categories": ["landing", "feature"]
     }
   ]
 }

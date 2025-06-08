@@ -47,13 +47,26 @@ export const landingBlockCategories = [
       { name: 'left-aligned-footer' },
       { name: 'left-aligned-footer-with-socials' },
     ],
-    isNew: true,
+    isNew: false,
   },
   {
     slug: 'faq',
     name: 'FAQ Section',
     components: [{ name: 'centered-faq' }, { name: 'faq-two-sections' }],
-    isNew: true,
+    isNew: false,
+  },
+  {
+    slug: 'feature',
+    name: 'Feature Section',
+    components: [
+      { name: 'centered-feature-with-items-1' },
+      { name: 'centered-feature-with-items-2' },
+      { name: 'centered-feature-with-items-3' },
+      { name: 'centered-feature-with-items-4' },
+      { name: 'centered-feature-with-items-5' },
+      { name: 'left-aligned-feature-with-image-1' },
+    ],
+    isNew: false,
   },
 ];
 
