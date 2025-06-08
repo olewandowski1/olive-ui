@@ -52,7 +52,7 @@ export const landingBlockCategories = [
   {
     slug: 'faq',
     name: 'FAQ Section',
-    components: [{ name: 'centered-faq' }],
+    components: [{ name: 'centered-faq' }, { name: 'faq-two-sections' }],
     isNew: true,
   },
 ];

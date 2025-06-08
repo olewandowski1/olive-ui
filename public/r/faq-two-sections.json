@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-two-sections",
+  "type": "registry:block",
+  "title": "FAQ Two Sections",
+  "description": "A FAQ section with two parts: one for general introduction and another, on the right, for specific questions and answers.",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/faq-two-sections/page.tsx",
+      "content": "import FAQTwoSections from '@/registry/default/blocks/faq-two-sections/components/faq-two-sections';\r\n\r\nexport default function Page() {\r\n  return <FAQTwoSections />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/blocks/page.tsx"
+    },
+    {
+      "path": "registry/default/blocks/faq-two-sections/components/faq-two-sections.tsx",
+      "content": "import Link from 'next/link';\r\n\r\nimport {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from '@/registry/default/ui/accordion';\r\n\r\nimport { MaxWidthWrapper } from './max-width-wrapper';\r\n\r\ntype FAQTwoSectionsProps = {\r\n  badgeText?: string;\r\n  headingText?: string;\r\n  faqDescription?: string;\r\n  faqLinkText?: string;\r\n  faqLinkHref?: string;\r\n  questions?: {\r\n    id: string;\r\n    title: string;\r\n    content: string;\r\n  }[];\r\n};\r\n\r\nexport default function FAQTwoSections({\r\n  badgeText = 'Frequently Asked Questions',\r\n  headingText = 'Do you need help?',\r\n  faqDescription = 'This section contains answers to frequently asked questions. If you cannot find the answer to your question, feel free to reach out to us directly.',\r\n  faqLinkText = 'Contact us',\r\n  faqLinkHref = '#',\r\n  questions = [\r\n    {\r\n      id: '1',\r\n      title: 'What is the purpose of this FAQ section?',\r\n      content:\r\n        'This FAQ section is designed to provide answers to common questions and help users find information quickly.',\r\n    },\r\n    {\r\n      id: '2',\r\n      title: 'How can I contact support if my question is not answered here?',\r\n      content:\r\n        'If you cannot find the answer to your question, feel free to reach out to us directly through our contact page.',\r\n    },\r\n    {\r\n      id: '3',\r\n      title: 'Can I suggest a new question for this FAQ?',\r\n      content:\r\n        'Yes, we welcome suggestions for new questions. Please contact us with your suggestion.',\r\n    },\r\n    {\r\n      id: '4',\r\n      title: 'How often is the FAQ updated?',\r\n      content:\r\n        'We strive to keep the FAQ updated with the most relevant and frequently asked questions. If you have a question that is not answered, please let us know.',\r\n    },\r\n    {\r\n      id: '5',\r\n      title: 'Is there a way to search for specific questions in the FAQ?',\r\n      content:\r\n        'Currently, there is no search functionality, but you can browse through the questions listed in this section.',\r\n    },\r\n  ],\r\n}: FAQTwoSectionsProps) {\r\n  return (\r\n    <section aria-labelledby='faq-heading'>\r\n      <MaxWidthWrapper>\r\n        <div className='grid gap-6 lg:grid-cols-2 sm:gap-8'>\r\n          <div className='flex flex-col gap-6 sm:gap-8'>\r\n            <span\r\n              role='banner'\r\n              aria-label='Section Identifier'\r\n              className='text-sm font-medium text-primary'\r\n            >\r\n              {badgeText}\r\n            </span>\r\n\r\n            <h2\r\n              id='faq-heading'\r\n              className='text-3xl font-bold tracking-tighter text-pretty sm:text-4xl md:text-5xl'\r\n            >\r\n              {headingText}\r\n            </h2>\r\n\r\n            <p className='text-base/7 text-pretty text-foreground/80'>\r\n              {faqDescription}{' '}\r\n              <Link\r\n                href={faqLinkHref}\r\n                className='font-semibold underline rounded-sm underline-offset-2 hover:text-foreground/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'\r\n                aria-describedby='faq-contact-description'\r\n              >\r\n                {faqLinkText}\r\n              </Link>\r\n              .\r\n              <span id='faq-contact-description' className='sr-only'>\r\n                Navigates to the contact page in the same tab\r\n              </span>\r\n            </p>\r\n          </div>\r\n\r\n          <div className='w-full'>\r\n            <h3 className='sr-only'>Frequently Asked Questions List</h3>\r\n            <Accordion\r\n              type='single'\r\n              collapsible\r\n              className='w-full'\r\n              defaultValue='1'\r\n            >\r\n              {questions.map((question) => (\r\n                <AccordionItem\r\n                  value={question.id}\r\n                  key={question.id}\r\n                  className='py-2'\r\n                >\r\n                  <AccordionTrigger\r\n                    aria-describedby={`faq-content-${question.id}`}\r\n                    className='py-2 text-left text-base/7 hover:no-underline'\r\n                  >\r\n                    {question.title}\r\n                  </AccordionTrigger>\r\n                  <AccordionContent\r\n                    id={`faq-content-${question.id}`}\r\n                    className='pb-2 text-left text-muted-foreground'\r\n                  >\r\n                    {question.content}\r\n                  </AccordionContent>\r\n                </AccordionItem>\r\n              ))}\r\n            </Accordion>\r\n          </div>\r\n        </div>\r\n      </MaxWidthWrapper>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/faq-two-sections/components/max-width-wrapper.tsx",
+      "content": "import { cn } from '@/registry/default/lib/utils';\r\n\r\ntype MaxWidthWrapperProps = {\r\n  className?: string;\r\n  children: React.ReactNode;\r\n};\r\n\r\nexport function MaxWidthWrapper({ className, children }: MaxWidthWrapperProps) {\r\n  return (\r\n    <div\r\n      className={cn('h-full mx-auto w-full max-w-screen-xl px-2', className)}\r\n    >\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "landing",
+    "faq"
+  ]
+}

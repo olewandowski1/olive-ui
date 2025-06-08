@@ -81,7 +81,7 @@ export default function CenteredFAQ({
   return (
     <section aria-labelledby='faq-heading'>
       <MaxWidthWrapper>
-        <div className='flex flex-col items-center gap-6 mx-auto text-center sm:gap-8 lg:gap-12'>
+        <div className='flex flex-col items-center gap-6 mx-auto text-center sm:gap-8'>
           <span
             role='banner'
             aria-label='Section Identifier'
@@ -112,12 +112,12 @@ export default function CenteredFAQ({
             </span>
           </p>
 
-          <div className='w-full max-w-screen-lg'>
+          <div className='w-full max-w-screen-md'>
             <h3 className='sr-only'>Frequently Asked Questions List</h3>
             <Accordion
               type='single'
               collapsible
-              className='w-full max-w-screen-lg'
+              className='w-full'
               defaultValue='1'
             >
               {questions.map((question) => (

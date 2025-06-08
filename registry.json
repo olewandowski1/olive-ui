@@ -301,6 +301,29 @@
         }
       ],
       "categories": ["landing", "faq"]
+    },
+    {
+      "name": "faq-two-sections",
+      "type": "registry:block",
+      "title": "FAQ Two Sections",
+      "description": "A FAQ section with two parts: one for general introduction and another, on the right, for specific questions and answers.",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "registry/default/blocks/faq-two-sections/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/faq-two-sections/components/faq-two-sections.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/faq-two-sections/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "faq"]
     }
   ]
 }
