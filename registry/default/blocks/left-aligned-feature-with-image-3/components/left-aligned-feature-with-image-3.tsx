@@ -5,7 +5,7 @@ import { Button } from '@/registry/default/ui/button';
 
 import { MaxWidthWrapper } from './max-width-wrapper';
 
-type LeftAlignedFeatureWithImage1Props = {
+type LeftAlignedFeatureWithImage3Props = {
   badgeText?: string;
   headingText?: string;
   sectionDescription?: string;
@@ -17,15 +17,14 @@ type LeftAlignedFeatureWithImage1Props = {
     variant?: 'primary' | 'secondary';
     icon?: LucideIcon;
   }[];
-  testimonial?: {
-    name: string;
-    role: string;
-    content: string;
-    imageUrl: string;
-  };
+  stats?: {
+    id: number;
+    title: string;
+    description: string;
+  }[];
 };
 
-export default function LeftAlignedFeatureWithImage1({
+export default function LeftAlignedFeatureWithImage3({
   badgeText = 'Feature Highlights',
   headingText = 'Boost Your Experience with Our Key Features',
   sectionDescription = 'Dive into the unique features that differentiate us and enrich your experience. Each feature is crafted to deliver exceptional value and convenience, ensuring you enjoy a seamless journey with our offerings. Discover how our innovative solutions are tailored to meet your needs and exceed your expectations.',
@@ -44,14 +43,21 @@ export default function LeftAlignedFeatureWithImage1({
       icon: ArrowRight,
     },
   ],
-  testimonial = {
-    name: 'Jane Doe',
-    role: 'Product Manager',
-    content:
-      'This feature has transformed the way we work, making our processes more efficient and enjoyable. The attention to detail and user-centric design is evident in every aspect. Highly recommended!',
-    imageUrl: 'https://github.com/shadcn.png',
-  },
-}: LeftAlignedFeatureWithImage1Props) {
+  stats = [
+    {
+      id: 1,
+      title: '55%',
+      description:
+        'Increase in user engagement since employing our new features.',
+    },
+    {
+      id: 2,
+      title: '100%',
+      description:
+        'Satisfaction rate from users who have tried our new features.',
+    },
+  ],
+}: LeftAlignedFeatureWithImage3Props) {
   return (
     <section aria-labelledby='feature-heading'>
       <MaxWidthWrapper>
@@ -71,6 +77,31 @@ export default function LeftAlignedFeatureWithImage1({
             <p className='text-base/7 text-pretty text-foreground/80'>
               {sectionDescription}
             </p>
+
+            <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:gap-8'>
+              {stats.map(({ id, title, description }) => (
+                <article
+                  key={id}
+                  className='flex flex-col max-w-xs gap-2'
+                  aria-labelledby={`feature-title-${id}`}
+                  aria-describedby={`feature-description-${id}`}
+                >
+                  <h4
+                    id={`feature-title-${id}`}
+                    className='text-3xl font-bold leading-none text-foreground/90 md:text-4xl'
+                  >
+                    {title}
+                  </h4>
+
+                  <p
+                    id={`feature-description-${id}`}
+                    className='text-sm font-normal text-foreground/80 line-clamp-2'
+                  >
+                    {description}
+                  </p>
+                </article>
+              ))}
+            </div>
 
             <div className='flex flex-col gap-3 lg:flex-row sm:gap-4'>
               {buttons.map((button, index) => {
@@ -103,34 +134,6 @@ export default function LeftAlignedFeatureWithImage1({
                 );
               })}
             </div>
-
-            <blockquote
-              className='max-w-lg pl-4 mt-6 border-l-4 border-primary/20'
-              aria-labelledby='testimonial-author'
-            >
-              <p className='mb-3 text-sm italic text-muted-foreground text-start'>
-                "{testimonial.content}"
-              </p>
-              <footer className='flex items-center gap-3'>
-                <img
-                  src={testimonial.imageUrl}
-                  alt={`${testimonial.name} Profile Picture`}
-                  className='object-cover w-10 h-10 rounded-full'
-                  loading='lazy'
-                />
-                <div className='leading-none text-left'>
-                  <cite
-                    id='testimonial-author'
-                    className='text-sm not-italic font-medium text-foreground'
-                  >
-                    {testimonial.name}
-                  </cite>
-                  <p className='text-xs text-muted-foreground'>
-                    {testimonial.role}
-                  </p>
-                </div>
-              </footer>
-            </blockquote>
           </div>
 
           <figure className='relative w-full'>

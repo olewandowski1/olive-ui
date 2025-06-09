@@ -65,6 +65,8 @@ export const landingBlockCategories = [
       { name: 'centered-feature-with-items-4' },
       { name: 'centered-feature-with-items-5' },
       { name: 'left-aligned-feature-with-image-1' },
+      { name: 'left-aligned-feature-with-image-2' },
+      { name: 'left-aligned-feature-with-image-3' },
     ],
     isNew: false,
   },

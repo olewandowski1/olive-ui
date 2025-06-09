@@ -99,7 +99,7 @@ export default function CenteredFeatureWithItems5({
 
                 <p
                   id={`feature-description-${id}`}
-                  className='text-sm font-normal text-foreground/80'
+                  className='max-w-md text-sm font-normal text-foreground/80'
                 >
                   {description}
                 </p>

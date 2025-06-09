@@ -1,11 +1,11 @@
 import {
   Accessibility,
   Blocks,
-  ChartBarDecreasingIcon,
   Code,
   Computer,
   LucideIcon,
   TrendingUp,
+  TrendingUpDown,
 } from 'lucide-react';
 
 import { MaxWidthWrapper } from './max-width-wrapper';
@@ -59,7 +59,7 @@ export default function CenteredFeatureWithItems3({
       title: 'Sleek Design',
       description:
         'Enjoy a modern and sleek design that enhances usability and visual appeal.',
-      icon: ChartBarDecreasingIcon,
+      icon: TrendingUpDown,
     },
     {
       id: 6,
@@ -73,7 +73,7 @@ export default function CenteredFeatureWithItems3({
   return (
     <section aria-labelledby='feature-heading'>
       <MaxWidthWrapper>
-        <div className='flex flex-col items-center gap-6 mx-auto text-center sm:gap-8 lg:gap-12'>
+        <div className='flex flex-col gap-6 mx-auto lg:items-center lg:text-center sm:gap-8 lg:gap-12'>
           <span className='text-sm font-medium text-primary'>{badgeText}</span>
 
           <h2

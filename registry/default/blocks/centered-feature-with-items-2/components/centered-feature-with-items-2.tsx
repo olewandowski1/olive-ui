@@ -45,7 +45,7 @@ export default function CenteredFeatureWithItems2({
   return (
     <section aria-labelledby='feature-heading'>
       <MaxWidthWrapper>
-        <div className='flex flex-col items-center gap-6 mx-auto text-center sm:gap-8 lg:gap-12'>
+        <div className='flex flex-col items-start gap-6 mx-auto lg:items-center lg:text-center text-start sm:gap-8 lg:gap-12'>
           <span className='text-sm font-medium text-primary'>{badgeText}</span>
 
           <h2
@@ -55,7 +55,7 @@ export default function CenteredFeatureWithItems2({
             {headingText}
           </h2>
 
-          <p className='max-w-screen-md mx-auto text-center text-base/7 text-pretty text-foreground/80'>
+          <p className='max-w-screen-md mx-auto text-base/7 text-pretty text-foreground/80'>
             {sectionDescription}
           </p>
 
