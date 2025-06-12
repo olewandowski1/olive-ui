@@ -96,7 +96,7 @@ export function BlockViewerDock({ children, component }: BlockViewerDockProps) {
         </div>
       </div>
 
-      <div className='border rounded-lg transition-all duration-300 overflow-hidden p-4 md:p-8 bg-gradient-to-b from-muted/20 via-muted/50 to-muted/80 mx-auto min-h-[324px] flex flex-col items-center justify-center w-full'>
+      <div className='border rounded-lg transition-all duration-300 overflow-hidden p-4 md:p-8 bg-gradient-to-b from-muted/30 via-muted/40 to-muted/30 mx-auto min-h-[324px] flex flex-col items-center justify-center w-full'>
         {children}
       </div>
     </div>

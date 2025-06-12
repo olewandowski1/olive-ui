@@ -45,7 +45,7 @@ export default function CenteredFeatureWithItems2({
   return (
     <section aria-labelledby='feature-heading'>
       <MaxWidthWrapper>
-        <div className='flex flex-col items-start gap-6 mx-auto lg:items-center lg:text-center text-start sm:gap-8 lg:gap-12'>
+        <div className='flex flex-col items-start gap-6 mx-auto lg:items-center lg:text-center text-start sm:gap-8'>
           <span className='text-sm font-medium text-primary'>{badgeText}</span>
 
           <h2
@@ -60,7 +60,7 @@ export default function CenteredFeatureWithItems2({
           </p>
 
           <div
-            className='grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-3'
+            className='grid grid-cols-1 gap-8 lg:grid-cols-3'
             role='region'
             aria-labelledby='features-list-heading'
           >

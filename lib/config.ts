@@ -70,6 +70,16 @@ export const landingBlockCategories = [
     ],
     isNew: false,
   },
+  {
+    slug: 'bento-grid',
+    name: 'Bento Grid',
+    components: [
+      { name: 'bento-grid-1' },
+      { name: 'bento-grid-2' },
+      { name: 'bento-grid-3' },
+      { name: 'bento-grid-4' },
+    ],
+  },
 ];
 
 // Function to get a category by its slug

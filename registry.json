@@ -87,7 +87,7 @@
       "categories": ["landing", "hero"]
     },
     {
-      "name": "hero-block-with-image-3",
+      "name": "hero-block-with-image-4",
       "type": "registry:block",
       "title": "Hero Block With Image Variant 3",
       "description": "A right aligned hero block with a badge, title, description, 2 buttons (primary, secondary), and an image on the left.",
@@ -517,6 +517,98 @@
         }
       ],
       "categories": ["landing", "feature"]
+    },
+    {
+      "name": "bento-grid-1",
+      "type": "registry:block",
+      "title": "Bento Grid Variant 1",
+      "description": "A bento grid layout with a title, description, and a list of items (4) with titles, icons and descriptions.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/default/blocks/bento-grid-1/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-1/components/bento-grid-1.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-1/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "bento-grid"]
+    },
+    {
+      "name": "bento-grid-2",
+      "type": "registry:block",
+      "title": "Bento Grid Variant 2",
+      "description": "A bento grid layout with a title, description, and a list of items (4) with titles, icons and descriptions.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/default/blocks/bento-grid-2/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-2/components/bento-grid-2.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-2/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "bento-grid"]
+    },
+    {
+      "name": "bento-grid-3",
+      "type": "registry:block",
+      "title": "Bento Grid Variant 3",
+      "description": "A bento grid layout with a title, description, and a list of items (5) with titles, icons and descriptions.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/default/blocks/bento-grid-3/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-3/components/bento-grid-3.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-3/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "bento-grid"]
+    },
+    {
+      "name": "bento-grid-4",
+      "type": "registry:block",
+      "title": "Bento Grid Variant 4",
+      "description": "A bento grid layout with a title, description, and a list of items (4) with titles, icons and descriptions.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/default/blocks/bento-grid-4/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-4/components/bento-grid-4.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/bento-grid-4/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "bento-grid"]
     }
   ]
 }
