@@ -1,3 +1,4 @@
+import { Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,7 +12,6 @@ import {
 import { MaxWidthWrapper } from '@/components/max-width-wrapper';
 import { landingBlockCategories } from '@/lib/config';
 import { Badge } from '@/registry/default/ui/badge';
-import { Sparkles } from 'lucide-react';
 
 export function BlocksBrowser() {
   return (
