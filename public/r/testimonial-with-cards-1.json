@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonial-with-cards-1",
+  "type": "registry:block",
+  "title": "Testimonial With Cards Variant 1",
+  "description": "A testimonial section with a title, description, and a list of testimonials (3) displayed as cards.",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/testimonial-with-cards-1/page.tsx",
+      "content": "import TestimonialWithCards1 from '@/registry/default/blocks/testimonial-with-cards-1/components/testimonial-with-cards-1';\r\n\r\nexport default function Page() {\r\n  return <TestimonialWithCards1 />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/blocks/page.tsx"
+    },
+    {
+      "path": "registry/default/blocks/testimonial-with-cards-1/components/testimonial-with-cards-1.tsx",
+      "content": "import { UserRound } from 'lucide-react';\r\n\r\nimport {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from '@/registry/default/ui/avatar';\r\nimport { Card, CardContent, CardFooter } from '@/registry/default/ui/card';\r\n\r\nimport { MaxWidthWrapper } from './max-width-wrapper';\r\n\r\nexport interface TestimonialWithCards1Props {\r\n  badgeText?: string;\r\n  headingText?: string;\r\n  sectionDescription?: string;\r\n  testimonialCards?: {\r\n    quote: string;\r\n    author: {\r\n      name: string;\r\n      title: string;\r\n      imageUrl: string;\r\n    };\r\n  }[];\r\n}\r\n\r\nexport default function TestimonialWithCards1({\r\n  badgeText = 'What People Say',\r\n  headingText = 'Join The Community of Developers Who Love Olive UI',\r\n  sectionDescription = \"Build beautiful and accessible user interfaces with ease. Here's what our users have to say about Olive UI.\",\r\n  testimonialCards = [\r\n    {\r\n      quote:\r\n        '“Olive UI has completely changed the way I build user interfaces. The components are beautiful and easy to use.”',\r\n      author: {\r\n        name: 'Jane Doe',\r\n        title: 'Frontend Engineer',\r\n        imageUrl: 'https://github.com/shadcn.png',\r\n      },\r\n    },\r\n    {\r\n      quote:\r\n        '“I love how Olive UI makes it easy to create responsive and accessible designs. The usage of Tailwind CSS is a game changer.”',\r\n      author: {\r\n        name: 'John Smith',\r\n        title: 'UX Designer',\r\n        imageUrl: 'https://github.com/shadcn.png',\r\n      },\r\n    },\r\n    {\r\n      quote:\r\n        '“The components in Olive UI are not only visually appealing but also highly customizable. Easy to integrate into any project.”',\r\n      author: {\r\n        name: 'Alice Johnson',\r\n        title: 'Senior Full Stack Engineer',\r\n        imageUrl: 'https://github.com/shadcn.png',\r\n      },\r\n    },\r\n  ],\r\n}: TestimonialWithCards1Props) {\r\n  return (\r\n    <section role='region' aria-labelledby='testimonial-heading'>\r\n      <h2 id='testimonial-heading' className='sr-only'>\r\n        User testimonials\r\n      </h2>\r\n      <MaxWidthWrapper>\r\n        <div className='flex flex-col items-center gap-6 text-center sm:gap-8'>\r\n          <span className='text-sm font-medium text-primary'>{badgeText}</span>\r\n          <h3 className='max-w-screen-md text-3xl font-bold tracking-tight text-pretty sm:text-4xl md:text-5xl'>\r\n            {headingText}\r\n          </h3>\r\n          <p className='max-w-screen-md text-base/7 text-foreground/80'>\r\n            {sectionDescription}\r\n          </p>\r\n\r\n          <div\r\n            role='region'\r\n            aria-labelledby='testimonial-cards-heading'\r\n            className='grid w-full max-w-screen-sm gap-8 lg:max-w-screen-lg lg:grid-cols-3'\r\n          >\r\n            <h4 id='testimonial-cards-heading' className='sr-only'>\r\n              User Testimonials\r\n            </h4>\r\n            {testimonialCards.map(({ quote, author }) => (\r\n              <Card key={author.name}>\r\n                <CardContent>\r\n                  <blockquote className='text-lg font-semibold leading-7 tracking-tight text-start text-foreground/90'>\r\n                    <p>{quote}</p>\r\n                  </blockquote>\r\n                </CardContent>\r\n                <CardFooter className='flex items-start space-x-3'>\r\n                  <Avatar className='w-10 h-10 rounded-lg'>\r\n                    <AvatarImage src={author.imageUrl} alt={author.name} />\r\n                    <AvatarFallback className='flex items-center justify-center w-10 h-10 rounded-lg bg-muted'>\r\n                      <UserRound\r\n                        className='w-6 h-6 text-muted-foreground'\r\n                        aria-hidden='true'\r\n                      />\r\n                      <span className='sr-only'>\r\n                        {author.name}'s avatar placeholder\r\n                      </span>\r\n                    </AvatarFallback>\r\n                  </Avatar>\r\n                  <div className='flex flex-col items-start justify-center'>\r\n                    <p className='font-semibold text-md text-foreground/90'>\r\n                      {author.name}\r\n                    </p>\r\n                    <p className='text-xs text-muted-foreground'>\r\n                      {author.title}\r\n                    </p>\r\n                  </div>\r\n                </CardFooter>\r\n              </Card>\r\n            ))}\r\n          </div>\r\n        </div>\r\n      </MaxWidthWrapper>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/testimonial-with-cards-1/components/max-width-wrapper.tsx",
+      "content": "import { cn } from '@/registry/default/lib/utils';\r\n\r\ntype MaxWidthWrapperProps = {\r\n  className?: string;\r\n  children: React.ReactNode;\r\n};\r\n\r\nexport function MaxWidthWrapper({ className, children }: MaxWidthWrapperProps) {\r\n  return (\r\n    <div\r\n      className={cn('h-full mx-auto w-full max-w-screen-xl px-2', className)}\r\n    >\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "landing",
+    "testimonial"
+  ]
+}

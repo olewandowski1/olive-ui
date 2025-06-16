@@ -15,6 +15,7 @@ export type BlockCategoryType = {
   name: string;
   components: { name: string }[];
   isNew?: boolean;
+  isComingSoon?: boolean;
 };
 
 // Define the block categories and their components
@@ -22,13 +23,13 @@ export type BlockCategoryType = {
 export const landingBlockCategories = [
   {
     slug: 'header',
-    name: 'Header',
+    name: 'Header Section',
     components: [{ name: 'left-aligned-header' }, { name: 'centered-header' }],
     isNew: false,
   },
   {
     slug: 'hero',
-    name: 'Hero',
+    name: 'Hero Section',
     components: [
       { name: 'centered-hero-block' },
       { name: 'hero-block-with-image-1' },
@@ -41,7 +42,7 @@ export const landingBlockCategories = [
   },
   {
     slug: 'footer',
-    name: 'Footer',
+    name: 'Footer Section',
     components: [
       { name: 'centered-footer' },
       { name: 'left-aligned-footer' },
@@ -72,13 +73,81 @@ export const landingBlockCategories = [
   },
   {
     slug: 'bento-grid',
-    name: 'Bento Grid',
+    name: 'Bento Grid Section',
     components: [
       { name: 'bento-grid-1' },
       { name: 'bento-grid-2' },
       { name: 'bento-grid-3' },
       { name: 'bento-grid-4' },
     ],
+    isNew: false,
+  },
+  {
+    slug: 'testimonial',
+    name: 'Testimonial Section',
+    components: [
+      { name: 'single-testimonial' },
+      { name: 'double-testimonial' },
+      { name: 'testimonial-with-cards-1' },
+    ],
+    isNew: false,
+    isComingSoon: false,
+  },
+  {
+    slug: 'call-to-action',
+    name: 'Call to Action Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
+  },
+  {
+    slug: 'pricing',
+    name: 'Pricing Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
+  },
+  {
+    slug: 'blog',
+    name: 'Blog Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
+  },
+  {
+    slug: 'team',
+    name: 'Team Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
+  },
+  {
+    slug: 'contact',
+    name: 'Contact Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
+  },
+  {
+    slug: 'newsletter',
+    name: 'Newsletter Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
+  },
+  {
+    slug: 'banner',
+    name: 'Banner Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
+  },
+  {
+    slug: 'coming-soon',
+    name: 'Coming Soon Section',
+    components: [],
+    isNew: false,
+    isComingSoon: true,
   },
 ];
 

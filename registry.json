@@ -609,6 +609,75 @@
         }
       ],
       "categories": ["landing", "bento-grid"]
+    },
+    {
+      "name": "single-testimonial",
+      "type": "registry:block",
+      "title": "Single Testimonial",
+      "description": "A single testimonial block with a quote, author avatar, author name, and author position.",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/default/blocks/single-testimonial/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/single-testimonial/components/single-testimonial.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/single-testimonial/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "testimonial"]
+    },
+    {
+      "name": "double-testimonial",
+      "type": "registry:block",
+      "title": "Double Testimonial",
+      "description": "A double testimonial block with a quote, author avatar, author name, and author position.",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/default/blocks/double-testimonial/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/double-testimonial/components/double-testimonial.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/double-testimonial/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "testimonial"]
+    },
+    {
+      "name": "testimonial-with-cards-1",
+      "type": "registry:block",
+      "title": "Testimonial With Cards Variant 1",
+      "description": "A testimonial section with a title, description, and a list of testimonials (3) displayed as cards.",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/default/blocks/testimonial-with-cards-1/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/testimonial-with-cards-1/components/testimonial-with-cards-1.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/testimonial-with-cards-1/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "testimonial"]
     }
   ]
 }

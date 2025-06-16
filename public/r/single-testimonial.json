@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "single-testimonial",
+  "type": "registry:block",
+  "title": "Single Testimonial",
+  "description": "A single testimonial block with a quote, author avatar, author name, and author position.",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/single-testimonial/page.tsx",
+      "content": "import SingleTestimonial from '@/registry/default/blocks/single-testimonial/components/single-testimonial';\r\n\r\nexport default function Page() {\r\n  return <SingleTestimonial />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/blocks/page.tsx"
+    },
+    {
+      "path": "registry/default/blocks/single-testimonial/components/single-testimonial.tsx",
+      "content": "import { Slash, UserRound } from 'lucide-react';\r\n\r\nimport {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from '@/registry/default/ui/avatar';\r\n\r\nimport { MaxWidthWrapper } from './max-width-wrapper';\r\n\r\nexport type Author = {\r\n  name: string;\r\n  title: string;\r\n  imageUrl: string;\r\n};\r\n\r\nexport interface SingleTestimonialProps {\r\n  quote?: string;\r\n  author?: Author;\r\n}\r\n\r\nexport default function SingleTestimonial({\r\n  quote = `“Olive UI is a game-changer for scratch development.\r\n    It provides a solid foundation with its design system and component\r\n    library, making it easy to build beautiful and accessible user\r\n    interfaces.”`,\r\n  author = {\r\n    name: 'Oliver J. Smith',\r\n    title: 'Senior Software Engineer',\r\n    imageUrl: 'https://github.com/shadcn.png',\r\n  },\r\n}: SingleTestimonialProps) {\r\n  const headingId = `single-testimonial-${author.name\r\n    .toLowerCase()\r\n    .replace(/\\s+/g, '-')}-heading`;\r\n\r\n  return (\r\n    <section role='region' aria-labelledby={headingId}>\r\n      <h2 id={headingId} className='sr-only'>\r\n        Testimonial from {author.name}\r\n      </h2>\r\n      <MaxWidthWrapper className='flex flex-col items-center justify-center space-y-9'>\r\n        <figure className='flex flex-col items-center space-y-6 text-center'>\r\n          <blockquote\r\n            cite={author.name}\r\n            className='max-w-screen-md text-lg font-semibold leading-7 tracking-tight text-foreground/90'\r\n          >\r\n            <p>{quote}</p>\r\n          </blockquote>\r\n          <figcaption className='flex flex-col items-center space-y-3'>\r\n            <Avatar className='w-10 h-10 rounded-lg'>\r\n              <AvatarImage src={author.imageUrl} alt={author.name} />\r\n              <AvatarFallback className='flex items-center justify-center w-10 h-10 rounded-lg bg-muted'>\r\n                <UserRound\r\n                  className='w-6 h-6 text-muted-foreground'\r\n                  aria-hidden='true'\r\n                />\r\n                <span className='sr-only'>\r\n                  {author.name}'s avatar placeholder\r\n                </span>\r\n              </AvatarFallback>\r\n            </Avatar>\r\n            <div className='flex items-center space-x-2'>\r\n              <p className='text-sm font-semibold text-foreground/90'>\r\n                {author.name}\r\n              </p>\r\n              <Slash\r\n                className='w-3 h-3 text-muted-foreground'\r\n                aria-hidden='true'\r\n              />\r\n              <p className='text-xs text-muted-foreground'>{author.title}</p>\r\n            </div>\r\n          </figcaption>\r\n        </figure>\r\n      </MaxWidthWrapper>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/single-testimonial/components/max-width-wrapper.tsx",
+      "content": "import { cn } from '@/registry/default/lib/utils';\r\n\r\ntype MaxWidthWrapperProps = {\r\n  className?: string;\r\n  children: React.ReactNode;\r\n};\r\n\r\nexport function MaxWidthWrapper({ className, children }: MaxWidthWrapperProps) {\r\n  return (\r\n    <div\r\n      className={cn('h-full mx-auto w-full max-w-screen-xl px-2', className)}\r\n    >\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "landing",
+    "testimonial"
+  ]
+}

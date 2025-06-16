@@ -10,6 +10,8 @@ import {
 
 import { MaxWidthWrapper } from '@/components/max-width-wrapper';
 import { landingBlockCategories } from '@/lib/config';
+import { Badge } from '@/registry/default/ui/badge';
+import { Activity, Sparkles, Zap } from 'lucide-react';
 
 export function BlocksBrowser() {
   return (
@@ -22,8 +24,16 @@ export function BlocksBrowser() {
         <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {landingBlockCategories
             .sort((a, b) => {
+              // Sort by isNew first, then by components length
               if (a.isNew && !b.isNew) return -1;
               if (!a.isNew && b.isNew) return 1;
+
+              // If both are new or not new, sort by components length
+              if (a.components.length > 0 && b.components.length === 0)
+                return -1;
+              if (a.components.length === 0 && b.components.length > 0)
+                return 1;
+
               return 0;
             })
             .map((category) => {
@@ -36,6 +46,7 @@ export function BlocksBrowser() {
                     name={category.name}
                     componentsCount={category.components.length}
                     isNew={category.isNew}
+                    isComingSoon={category.isComingSoon}
                   />
                 </Link>
               );
@@ -51,9 +62,15 @@ type CategoryCardProps = {
   name: string;
   componentsCount: number;
   isNew?: boolean;
+  isComingSoon?: boolean;
 };
 
-function CategoryCard({ slug, name, componentsCount }: CategoryCardProps) {
+function CategoryCard({
+  slug,
+  name,
+  componentsCount,
+  isComingSoon,
+}: CategoryCardProps) {
   const imageBasePath = `/blocks/${slug}`;
   const altText = `Beautiful ${name} Blocks`;
 
@@ -61,6 +78,18 @@ function CategoryCard({ slug, name, componentsCount }: CategoryCardProps) {
     <Card className='flex flex-col h-full gap-0.5 p-0 overflow-hidden bg-transparent border-0 rounded-xl group'>
       <div className='relative w-full h-48 overflow-hidden transition-shadow duration-200 ease-in-out border rounded-xl group-hover:shadow-sm'>
         <ImageComponent imageBasePath={imageBasePath} alt={altText} />
+
+        {isComingSoon ? (
+          <div className='absolute top-2 right-2'>
+            <Badge
+              variant='outline'
+              className='text-[10px] font-light tracking-tight rounded-lg'
+            >
+              Soon...
+              <Sparkles className='size-4' aria-hidden='true' />
+            </Badge>
+          </div>
+        ) : null}
       </div>
 
       <CardHeader className='flex-grow px-1 py-0 tracking-tight'>
