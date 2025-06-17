@@ -96,9 +96,13 @@ export const landingBlockCategories = [
   {
     slug: 'call-to-action',
     name: 'Call to Action Section',
-    components: [],
+    components: [
+      { name: 'call-to-action-centered' },
+      { name: 'call-to-action-centered-description' },
+      { name: 'call-to-action-simple' },
+    ],
     isNew: false,
-    isComingSoon: true,
+    isComingSoon: false,
   },
   {
     slug: 'pricing',

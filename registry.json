@@ -678,6 +678,75 @@
         }
       ],
       "categories": ["landing", "testimonial"]
+    },
+    {
+      "name": "call-to-action-centered",
+      "type": "registry:block",
+      "title": "Call To Action Centered",
+      "description": "A centered call to action block with a badge, title, and a call to action button.",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/call-to-action-centered/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/call-to-action-centered/components/call-to-action-centered.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/call-to-action-centered/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "call-to-action"]
+    },
+    {
+      "name": "call-to-action-centered-description",
+      "type": "registry:block",
+      "title": "Call To Action Centered With Description",
+      "description": "A centered call to action block with a badge, title, description, and a call to action button.",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/call-to-action-centered-description/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/call-to-action-centered-description/components/call-to-action-centered-description.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/call-to-action-centered-description/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "call-to-action"]
+    },
+    {
+      "name": "call-to-action-simple",
+      "type": "registry:block",
+      "title": "Call To Action Simple",
+      "description": "A simple call to action block with a title, description, a call to action button, and a helpery button.",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/call-to-action-simple/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/call-to-action-simple/components/call-to-action-simple.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/call-to-action-simple/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "call-to-action"]
     }
   ]
 }
