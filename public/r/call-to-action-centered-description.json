@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "call-to-action-centered-description",
+  "type": "registry:block",
+  "title": "Call To Action Centered With Description",
+  "description": "A centered call to action block with a badge, title, description, and a call to action button.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/call-to-action-centered-description/page.tsx",
+      "content": "import CallToActionCenteredDescription from '@/registry/default/blocks/call-to-action-centered-description/components/call-to-action-centered-description';\r\n\r\nexport default function Page() {\r\n  return <CallToActionCenteredDescription />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/blocks/page.tsx"
+    },
+    {
+      "path": "registry/default/blocks/call-to-action-centered-description/components/call-to-action-centered-description.tsx",
+      "content": "import { ChevronRight } from 'lucide-react';\r\nimport Link from 'next/link';\r\n\r\nimport { Button } from '@/registry/default/ui/button';\r\n\r\nimport { MaxWidthWrapper } from './max-width-wrapper';\r\n\r\ntype CallToActionCenteredDescriptionProps = {\r\n  badgeText?: string;\r\n  headingText?: string;\r\n  sectionDescription?: string;\r\n  ctaHref?: string;\r\n  ctaButtonText?: string;\r\n};\r\n\r\nexport default function CallToActionCenteredDescription({\r\n  badgeText = 'Explore Our Solutions',\r\n  headingText = 'Transform Your Experience with Our Innovative Offerings',\r\n  sectionDescription = 'Join us in building a better future with our innovative solutions. Explore our offerings and see how we can help you achieve your goals.',\r\n  ctaHref = '#',\r\n  ctaButtonText = 'Get Started',\r\n}: CallToActionCenteredDescriptionProps) {\r\n  return (\r\n    <section aria-labelledby='call-to-action-heading' role='region'>\r\n      <MaxWidthWrapper>\r\n        <div className='flex flex-col items-center gap-6 mx-auto text-center sm:gap-8'>\r\n          <span className='text-sm font-medium text-primary'>{badgeText}</span>\r\n\r\n          <h2\r\n            id='call-to-action-heading'\r\n            className='max-w-screen-md text-3xl font-bold tracking-tighter text-pretty sm:text-4xl md:text-5xl'\r\n          >\r\n            {headingText}\r\n          </h2>\r\n\r\n          <p className='max-w-screen-md mx-auto text-center text-base/7 text-pretty text-foreground/80'>\r\n            {sectionDescription}\r\n          </p>\r\n\r\n          <Button size='lg' className='w-full sm:w-auto' asChild>\r\n            <Link href={ctaHref}>\r\n              {ctaButtonText}\r\n              <ChevronRight\r\n                className='-ms-1 opacity-60'\r\n                size={16}\r\n                aria-hidden='true'\r\n              />\r\n            </Link>\r\n          </Button>\r\n        </div>\r\n      </MaxWidthWrapper>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/call-to-action-centered-description/components/max-width-wrapper.tsx",
+      "content": "import { cn } from '@/registry/default/lib/utils';\r\n\r\ntype MaxWidthWrapperProps = {\r\n  className?: string;\r\n  children: React.ReactNode;\r\n};\r\n\r\nexport function MaxWidthWrapper({ className, children }: MaxWidthWrapperProps) {\r\n  return (\r\n    <div\r\n      className={cn('h-full mx-auto w-full max-w-screen-xl px-2', className)}\r\n    >\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "landing",
+    "call-to-action"
+  ]
+}

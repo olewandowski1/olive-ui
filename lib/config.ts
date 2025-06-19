@@ -107,9 +107,9 @@ export const landingBlockCategories = [
   {
     slug: 'pricing',
     name: 'Pricing Section',
-    components: [],
+    components: [{ name: 'pricing-3-plans-1' }, { name: 'pricing-2-plans-1' }],
     isNew: false,
-    isComingSoon: true,
+    isComingSoon: false,
   },
   {
     slug: 'blog',

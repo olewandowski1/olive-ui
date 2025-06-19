@@ -9,7 +9,6 @@ import {
   Drawer,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -22,9 +21,7 @@ import {
 } from '@/registry/default/ui/tooltip';
 
 import { BlockCLI } from '@/components/component-cli';
-import { Icons } from '@/components/icons';
 import { OpenInV0Button } from '@/components/open-in-v0-button';
-import { siteConfig } from '@/lib/config';
 
 type BlockViewerDockProps = {
   children: React.ReactNode;
@@ -82,13 +79,6 @@ export function BlockViewerDock({ children, component }: BlockViewerDockProps) {
                   <div className='min-w-0 p-4'>
                     <BlockCLI name={component.name} />
                   </div>
-
-                  <DrawerFooter className='flex flex-row items-center justify-center p-4'>
-                    <Icons.logo className='size-6' />
-                    <span className='inline-block font-bold'>
-                      {siteConfig.name}
-                    </span>
-                  </DrawerFooter>
                 </DrawerContent>
               </Drawer>
             </TooltipProvider>

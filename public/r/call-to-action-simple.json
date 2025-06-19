@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "call-to-action-simple",
+  "type": "registry:block",
+  "title": "Call To Action Simple",
+  "description": "A simple call to action block with a title, description, a call to action button, and a helpery button.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/call-to-action-simple/page.tsx",
+      "content": "import CallToActionSimple from '@/registry/default/blocks/call-to-action-simple/components/call-to-action-simple';\r\n\r\nexport default function Page() {\r\n  return <CallToActionSimple />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/blocks/page.tsx"
+    },
+    {
+      "path": "registry/default/blocks/call-to-action-simple/components/call-to-action-simple.tsx",
+      "content": "import { ChevronRight } from 'lucide-react';\r\nimport Link from 'next/link';\r\n\r\nimport { Button } from '@/registry/default/ui/button';\r\n\r\nimport { MaxWidthWrapper } from './max-width-wrapper';\r\n\r\ntype CallToActionSimpleProps = {\r\n  headingText?: string;\r\n  sectionDescription?: string;\r\n  ctaHref?: string;\r\n  ctaButtonText?: string;\r\n  helperyHref?: string;\r\n  helperyButtonText?: string;\r\n};\r\n\r\nexport default function CallToActionSimple({\r\n  headingText = 'Elevate Your Experience',\r\n  sectionDescription = 'Elevate your experience with our exclusive offerings. Discover how we can help you achieve your goals and transform your journey.',\r\n  ctaHref = '#',\r\n  ctaButtonText = 'Get Started',\r\n  helperyHref = '#',\r\n  helperyButtonText = 'Learn More',\r\n}: CallToActionSimpleProps) {\r\n  return (\r\n    <section aria-labelledby='call-to-action-heading' role='region'>\r\n      <MaxWidthWrapper>\r\n        <div className='flex flex-col items-center justify-between gap-6 mx-auto md:flex-row sm:gap-8'>\r\n          <div className='flex flex-col items-center max-w-screen-sm gap-3 text-center md:items-start md:text-left'>\r\n            <h2\r\n              id='call-to-action-heading'\r\n              className='text-3xl font-bold tracking-tighter text-pretty sm:text-4xl md:text-5xl'\r\n            >\r\n              {headingText}\r\n            </h2>\r\n            <p className='mx-auto text-base/7 text-pretty text-foreground/80'>\r\n              {sectionDescription}\r\n            </p>\r\n          </div>\r\n\r\n          <div className='flex flex-col w-full gap-3 sm:flex-row sm:w-auto'>\r\n            <Button size='lg' className='w-full sm:w-auto' asChild>\r\n              <Link href={ctaHref}>{ctaButtonText}</Link>\r\n            </Button>\r\n            <Button\r\n              variant='ghost'\r\n              size='lg'\r\n              className='w-full sm:w-auto'\r\n              asChild\r\n            >\r\n              <Link href={helperyHref}>\r\n                {helperyButtonText}\r\n                <ChevronRight\r\n                  className='-me-1 opacity-60'\r\n                  size={16}\r\n                  aria-hidden='true'\r\n                />\r\n              </Link>\r\n            </Button>\r\n          </div>\r\n        </div>\r\n      </MaxWidthWrapper>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/blocks/call-to-action-simple/components/max-width-wrapper.tsx",
+      "content": "import { cn } from '@/registry/default/lib/utils';\r\n\r\ntype MaxWidthWrapperProps = {\r\n  className?: string;\r\n  children: React.ReactNode;\r\n};\r\n\r\nexport function MaxWidthWrapper({ className, children }: MaxWidthWrapperProps) {\r\n  return (\r\n    <div\r\n      className={cn('h-full mx-auto w-full max-w-screen-xl px-2', className)}\r\n    >\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "landing",
+    "call-to-action"
+  ]
+}

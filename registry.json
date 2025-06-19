@@ -747,6 +747,52 @@
         }
       ],
       "categories": ["landing", "call-to-action"]
+    },
+    {
+      "name": "pricing-3-plans-1",
+      "type": "registry:block",
+      "title": "Pricing 3 Plans Variant 1",
+      "description": "A pricing section with a badge, title, description and with 3 plans, each with a title, description, features list, and a call to action button.",
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "registry/default/blocks/pricing-3-plans-1/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/pricing-3-plans-1/components/pricing-3-plans-1.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/pricing-3-plans-1/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "pricing"]
+    },
+    {
+      "name": "pricing-2-plans-1",
+      "type": "registry:block",
+      "title": "Pricing 2 Plans Variant 1",
+      "description": "A pricing section with a badge, title, description and with 2 plans, each with a title, description, features list, and a call to action button.",
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "registry/default/blocks/pricing-2-plans-1/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/pricing-2-plans-1/components/pricing-2-plans-1.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/pricing-2-plans-1/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "pricing"]
     }
   ]
 }
