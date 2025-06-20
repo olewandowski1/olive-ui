@@ -18,13 +18,15 @@ Produce:
 
 1. A fully-refined `.tsx` component
    - Uses correct `import` paths for `shadcn/ui`
-   - Applies consistent Tailwind classes
+   - Applies consistent Tailwind classes.
+   - When applying `w-X h-X`, use the `size-X`.
    - Ensures semantic HTML + ARIA attributes for accessibility (WCAG 2.1 AA)
    - Follows naming conventions:
      - File and folder names use kebab-case (e.g., `max-width-component`)
      - Exported React component names use PascalCase (e.g., `MaxWidthComponent`)
-   - Default imports for `shadcn/ui` components come from  
+   - Imports for `shadcn/ui` components come from  
      `@/registry/default/ui/<component_name>`
+   - Component should be exported as a default (`export default function ComponentName() {}`)
 2. A JSON snippet for the Olive UI registry (`[block-name].json`) following the schema:
    ```json
    {

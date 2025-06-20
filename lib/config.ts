@@ -121,7 +121,7 @@ export const landingBlockCategories = [
   {
     slug: 'team',
     name: 'Team Section',
-    components: [],
+    components: [{ name: 'team-grid-cards' }],
     isNew: false,
     isComingSoon: true,
   },

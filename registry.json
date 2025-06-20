@@ -793,6 +793,29 @@
         }
       ],
       "categories": ["landing", "pricing"]
+    },
+    {
+      "name": "team-grid-cards",
+      "type": "registry:block",
+      "title": "Team Grid Cards",
+      "description": "A team section with a title, description, and a list of team members (6) displayed as cards, each with an avatar, name, position, and social media links.",
+      "registryDependencies": ["avatar", "button", "card"],
+      "files": [
+        {
+          "path": "registry/default/blocks/team-grid-cards/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/team-grid-cards/components/team-grid-cards.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/team-grid-cards/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "team"]
     }
   ]
 }
