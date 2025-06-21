@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: 'Olive UI',
+  label: 'Olive UI - Customizable UI Blocks for Landing Pages',
   url: 'https://olive-ui.vercel.app/',
   ogImage: 'https://olive-ui.vercel.app/og.jpg',
   description:
-    'Olive UI is a design system and component library for building beautiful and accessible user interfaces with React and Tailwind CSS.',
+    'Olive UI is a collection of customizable UI blocks for building landing pages quickly and efficiently. Built on Shadcn UI, it offers pre-built components that are extendable and compliant with WCAG 2.1 AA standards.',
   links: {
-    twitter: '',
-    github: 'https://olive-ui.vercel.app/',
+    github: 'https://github.com/olewandowski1/olive-ui',
   },
 };
 
@@ -129,22 +129,8 @@ export const landingBlockCategories = [
     isComingSoon: false,
   },
   {
-    slug: 'newsletter',
-    name: 'Newsletter Section',
-    components: [],
-    isNew: false,
-    isComingSoon: true,
-  },
-  {
-    slug: 'banner',
-    name: 'Banner Section',
-    components: [],
-    isNew: false,
-    isComingSoon: true,
-  },
-  {
-    slug: 'coming-soon',
-    name: 'Coming Soon Section',
+    slug: 'navbar',
+    name: 'Navbar Section',
     components: [],
     isNew: false,
     isComingSoon: true,

@@ -39,10 +39,10 @@ export default function CenteredHeroBlock({
         <div className='flex flex-col items-center gap-8 mx-auto text-center'>
           <Badge
             variant='outline'
-            className='flex items-center justify-center space-x-1.5 h-7 text-foreground/90 '
+            className='flex items-center justify-center space-x-1.5 h-7 text-foreground/90'
           >
             <span>
-              <BadgeIcon className='size-4' aria-hidden='true' />
+              <BadgeIcon className='size-4 opacity-60' aria-hidden='true' />
             </span>
             <Separator orientation='vertical' />
             <span className='text-xs font-normal text-foreground/90 line-clamp-1'>

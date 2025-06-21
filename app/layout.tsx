@@ -8,7 +8,7 @@ import { cn } from '@/registry/default/lib/utils';
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: siteConfig.label,
     template: `%s - ${siteConfig.name}`,
   },
   metadataBase: new URL(siteConfig.url),
@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     'Tailwind CSS',
     'Server Components',
     'Radix UI',
+    'Shadcn UI',
+    'Landing Page',
+    'Blocks',
   ],
   authors: [
     {

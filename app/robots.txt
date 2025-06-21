@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://olive-ui.vercel.app/sitemap.xml

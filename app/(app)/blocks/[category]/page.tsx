@@ -13,6 +13,19 @@ type CategoryPageProps = {
   params: Promise<{ category: string }>;
 };
 
+export async function generateMetadata({ params }: CategoryPageProps) {
+  const currentCategory = getCategory((await params).category);
+
+  if (!currentCategory) {
+    return {};
+  }
+
+  return {
+    title: `${currentCategory.name}`,
+    description: `Explore our collection of ${currentCategory.name} blocks, designed to help you build beautiful and functional UIs quickly and easily. Use these pre-built components to enhance your projects and streamline your development process.`,
+  };
+}
+
 export async function generateStaticParams() {
   return landingBlockCategories.map((category) => ({
     category: category.slug,
