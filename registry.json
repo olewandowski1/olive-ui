@@ -816,6 +816,67 @@
         }
       ],
       "categories": ["landing", "team"]
+    },
+    {
+      "name": "contact-form-centered",
+      "type": "registry:block",
+      "title": "Contact Form Centered",
+      "description": "A centered contact form block with a badge, title, description, and a contact form. It includes a name field, email field, message field, and a submit button. The form has also a modal that appears on Privacy Policy link click. You should handle the form submission logic, as well as the data validation.",
+      "registryDependencies": [
+        "button",
+        "checkbox",
+        "input",
+        "label",
+        "textarea",
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/contact-form-centered/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/contact-form-centered/components/contact-form-centered.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/contact-form-centered/components/contact-form.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/contact-form-centered/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/contact-form-centered/components/policy-modal.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "contact"]
+    },
+    {
+      "name": "contact-info-no-form",
+      "type": "registry:block",
+      "title": "Contact Info No Form",
+      "description": "A contact info block with a badge, title, description, and social links. The other part of the block is a card with contact information including an address, phone number, and email.",
+      "registryDependencies": ["card", "button"],
+      "files": [
+        {
+          "path": "registry/default/blocks/contact-info-no-form/page.tsx",
+          "type": "registry:page",
+          "target": "app/blocks/page.tsx"
+        },
+        {
+          "path": "registry/default/blocks/contact-info-no-form/components/contact-info-no-form.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/blocks/contact-info-no-form/components/max-width-wrapper.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["landing", "contact"]
     }
   ]
 }

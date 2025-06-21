@@ -112,25 +112,21 @@ export const landingBlockCategories = [
     isComingSoon: false,
   },
   {
-    slug: 'blog',
-    name: 'Blog Section',
-    components: [],
-    isNew: false,
-    isComingSoon: true,
-  },
-  {
     slug: 'team',
     name: 'Team Section',
     components: [{ name: 'team-grid-cards' }],
     isNew: false,
-    isComingSoon: true,
+    isComingSoon: false,
   },
   {
     slug: 'contact',
     name: 'Contact Section',
-    components: [],
+    components: [
+      { name: 'contact-form-centered' },
+      { name: 'contact-info-no-form' },
+    ],
     isNew: false,
-    isComingSoon: true,
+    isComingSoon: false,
   },
   {
     slug: 'newsletter',
